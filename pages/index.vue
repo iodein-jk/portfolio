@@ -9,12 +9,26 @@
             <div class="column2-right-golden-side">
                 <nav class="home-nav">
                     <ul class="container-wrap01">
-                        <li><nuxt-link to="/">Home</nuxt-link></li>
-                        <li><nuxt-link to="/blog">Blog</nuxt-link></li>
-                        <li><nuxt-link to="/work">Work</nuxt-link></li>
-                        <li><nuxt-link to="/profile">Profile</nuxt-link></li>
-                        <li><nuxt-link to="/faq">Faq</nuxt-link></li>
-                        <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+                        <li>
+                            <nuxt-link to="/blog">Blog</nuxt-link>
+                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                        </li>
+                        <li>
+                            <nuxt-link to="/work">Work</nuxt-link>
+                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                        </li>
+                        <li>
+                            <nuxt-link to="/profile">Profile</nuxt-link>
+                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                        </li>
+                        <li>
+                            <nuxt-link to="/faq">Faq</nuxt-link>
+                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                        </li>
+                        <li>
+                            <nuxt-link to="/contact">Contact</nuxt-link>
+                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -29,8 +43,20 @@ export default {
 </script>
 
 <style>
+    .home-nav {
+        padding-left: 32px;
+    }
+
     .home-nav ul {
         list-style: none;
+    }
+
+    .home-nav ul li:not(:first-child) {
+        margin-top: 16px;
+    }
+
+    .home-nav p {
+        font-size: 1.4rem;
     }
 
     @media (min-width: 748px) {

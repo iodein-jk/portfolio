@@ -1,7 +1,9 @@
 <template>
     <header>
-        <div class="container-wrap01">
-            <p>ヘッダーが入ります。ヘッダーが入ります。ヘッダーが入ります。ヘッダーが入ります。</p>
+        <div class="ex-header">
+            <div class="container-wrap01">
+                <p>ヘッダーが入ります。ヘッダーが入ります。ヘッダーが入ります。ヘッダーが入ります。</p>
+            </div>
         </div>
         <nav class="ex-nav">
             <ul class="container-wrap01">
@@ -20,9 +22,13 @@
 </script>
 
 <style>
+    .ex-header {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
     .ex-nav {
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding-bottom: 32px;
     }
     
     .ex-nav ul {

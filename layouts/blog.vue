@@ -1,7 +1,6 @@
 <template>
     <div>
         <Header/>
-        <div>ブログのナビゲーションバーをここに設置します</div>
         <nuxt/>
         <Footer/>
     </div>

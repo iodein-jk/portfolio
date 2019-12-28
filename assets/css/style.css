@@ -65,12 +65,19 @@ a[href="#"] {
     pointer-events: none;
 }
 
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 /*　##全体幅　*/
 .container-wrap01 { max-width: 1000px; margin-left: auto; margin-right: auto; }
 
 /*　##カラム　*/
-.column2-left-golden-main { width: 61.8%; }
-.column2-right-golden-side { width: 38.2% }
+@media (min-width: 748px) {
+    .column2-left-golden-main { width: 61.8%; }
+    .column2-right-golden-side { width: 38.2% }
+}
 
 /*　##フォント　*/
 .u-font-family-FrankRuehl {
