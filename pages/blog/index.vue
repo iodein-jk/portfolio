@@ -1,5 +1,7 @@
 <template>
-<nuxt-link to="/">Homeに戻る</nuxt-link>
+    <div class="container-wrap01">
+        <nuxt-link to="/">Homeに戻る</nuxt-link>
+    </div>
 </template>
 <script>
 export default {

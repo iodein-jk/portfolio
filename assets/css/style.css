@@ -73,9 +73,7 @@ br.br-sp { display: none }
 }
 
 /*　##全体幅　*/
-.container-wrap01 { max-width: 1600px; }
-.container-wrap02 { max-width: 1280px; }
-.container-wrap03 { max-width: 1000px; }
+.container-wrap01 { max-width: 1000px; margin-left: auto; margin-right: auto; }
 
 
 /*　##フォント　*/
