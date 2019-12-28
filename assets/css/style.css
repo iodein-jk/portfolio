@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* 
+
+==============================================
+◆CSSマップ
+==============================================
+│──【スタイルリセット】
+│──【サイトベース】
+│  │──全体幅
+│  │──フォント
+│──【コンポーネント】
+│  │──[エレメント]
+│  │　　│──見出し
+│  │　　│──ボタン
+│  │　　│──テーブル
+│  │　　│──リスト
+│  │　　│──フォーム
+│  │──[ブロック]
+│  │　　│──ヘッダー
+│  │　　│──グローバルナビ
+│  │　　│──フッター
+│  │　　│──サイド
+│
+*/
+
+
+/*　#スタイルリセット 
+---- */
+/*　#サイトベース 
+---- */
+html {
+    font-size: 62.5%; /*remサイズ指定用の文字サイズ全体統一*/
+}
+
+body {
+    background: #fff; /*全体背景色 - もしくはパターン*/
+    color: #333; /*ベース文字色*/
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    -webkit-text-size-adjust: 100%; /*文字間の隙間を統一する*/
+}
+
+a { /*文字リンクの基本仕様*/
+    color: #333;
+    text-decoration: underline;
+}
+
+a:hover { /*デフォルトの文字リンクホバーアクション*/
+    text-decoration: none;
+}
+
+a.none_under { /*アンダーラインなし版*/
+    text-decoration: none;
+}
+
+a.opacity:hover { /*画像用　半透明にする*/
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); /*IE用*/
+    opacity: 0.5;
+}
+
+a[href="#"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+br.br-pc { display: block }
+br.br-sp { display: none }
+
+@media all and (max-width: 736px) {
+    br.br-pc { display: none }
+    br.br-sp { display: block }
+}
+
+/*　##全体幅　*/
+.container-wrap01 { max-width: 1600px; }
+.container-wrap02 { max-width: 1280px; }
+.container-wrap03 { max-width: 1000px; }
+
+
+/*　##フォント　*/
+.u-font-family-FrankRuehl {
+    font-family: "FrankRuehl", serif;
+}
+
+/*　#コンポーネント
+---- */
+/*　##エレメント：見出し */
+
+/*　##エレメント：ボタン */
+
+/*　##エレメント：テーブル */
+
+/*　##エレメント：リスト */
+
+/*　##エレメント：フォーム */
+
+/*　##ブロック：ヘッダー */
+
+/*　##ブロック：グローバルナビ */
+
+/*　##ブロック：フッター */
