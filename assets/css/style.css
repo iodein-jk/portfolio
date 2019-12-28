@@ -7,6 +7,7 @@
 │──【スタイルリセット】
 │──【サイトベース】
 │  │──全体幅
+│  │──カラム
 │  │──フォント
 │──【コンポーネント】
 │  │──[エレメント]
@@ -64,17 +65,12 @@ a[href="#"] {
     pointer-events: none;
 }
 
-br.br-pc { display: block }
-br.br-sp { display: none }
-
-@media all and (max-width: 736px) {
-    br.br-pc { display: none }
-    br.br-sp { display: block }
-}
-
 /*　##全体幅　*/
 .container-wrap01 { max-width: 1000px; margin-left: auto; margin-right: auto; }
 
+/*　##カラム　*/
+.column2-left-golden-main { width: 61.8%; }
+.column2-right-golden-side { width: 38.2% }
 
 /*　##フォント　*/
 .u-font-family-FrankRuehl {
