@@ -11,23 +11,23 @@
                     <ul class="container-wrap01">
                         <li>
                             <nuxt-link to="/blog">Blog</nuxt-link>
-                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                            <p>制作日記や日常などの記事の一覧です。</p>
                         </li>
                         <li>
                             <nuxt-link to="/work">Work</nuxt-link>
-                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                            <p>カテゴリー別に制作実績を紹介しています。</p>
                         </li>
                         <li>
                             <nuxt-link to="/profile">Profile</nuxt-link>
-                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                            <p>自己紹介です。</p>
                         </li>
                         <li>
                             <nuxt-link to="/faq">Faq</nuxt-link>
-                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                            <p>制作依頼等をお送りいただける場合に質問いただいた内容を掲載しています。</p>
                         </li>
                         <li>
                             <nuxt-link to="/contact">Contact</nuxt-link>
-                            <p>説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                            <p>お問い合わせフォームです。</p>
                         </li>
                     </ul>
                 </nav>
@@ -67,4 +67,3 @@ export default {
         }
     }
 </style>
-
