@@ -13,6 +13,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.7",
+    "axios": "^0.19.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
@@ -21,6 +23,8 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"

@@ -1,3 +1,11 @@
+{
+  modules: [
+    ['wp-nuxt', {
+      endpoint: 'https://aoiblog.org/wp-json/wp/v2/posts?_embed'
+    }],
+ ]
+}
+
 module.exports = {
   /*
   ** Headers of the page
