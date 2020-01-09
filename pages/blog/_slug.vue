@@ -1,11 +1,14 @@
 <template>
     <div class="container-wrap01">
-        <ul class="post-list">
-            <li v-for="post in posts" :key="post.id" class="post-card">
+        <ul class="archive__post-list">
+            <li v-for="post in posts" :key="post.id" class="parchive__post-card">
                 <article>
                     <figure><a :href="post.link"><img :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url" :width="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.width" :height="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.height" :alt="post.title.rendered"></a></figure>
-                    <h2 class="subtitle"><a :href="post.link">{{ post.title.rendered }}</a></h2>
-                    <p>{{ post.date }}</p>
+                    <h2 class="archive__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
+                    <div class="archive__post-infomation">
+                        <p>{{ post._embedded['wp:term'][0][0].name }}</p>
+                        <p>{{ post.date }}</p>
+                    </div>
                 </article>
             </li>
         </ul>

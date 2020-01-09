@@ -48,6 +48,7 @@ a { /*文字リンクの基本仕様*/
 }
 
 a:hover { /*デフォルトの文字リンクホバーアクション*/
+    color: #00c58e;
     text-decoration: none;
 }
 
@@ -86,18 +87,17 @@ img {
 
 /*　#コンポーネント
 ---- */
-/*　##エレメント：見出し */
-
-/*　##エレメント：ボタン */
-
-/*　##エレメント：テーブル */
-
-/*　##エレメント：リスト */
-
-/*　##エレメント：フォーム */
-
-/*　##ブロック：ヘッダー */
-
-/*　##ブロック：グローバルナビ */
-
-/*　##ブロック：フッター */
+button {
+    background-color: #006ac5;
+    border-radius: 0.8em;
+    color: #fff;
+    display: block;
+    font-size: 1.6rem;
+    margin-top: 24px;;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
+    padding: 16px 24px;
+    text-align: center;
+    width: 100px;
+}
