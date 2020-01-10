@@ -29,8 +29,7 @@ class WpApi {
             page: 1,
             per_page: 5
         }
-        }).then(json => {
-            return { posts: json.data }
+        }).then(json => { return { posts: json.data }
         }).catch(e => {
             return { error: e }
         })

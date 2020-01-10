@@ -1,5 +1,7 @@
 <template>
     <div class="container-wrap01">
+        <input v-model="search" placeholder="edit me">
+        <p>search is: {{ search }}</p>
         <ul class="archive__post-list">
             <li v-for="post in posts" :key="post.id" class="parchive__post-card">
                 <article>
@@ -11,9 +13,9 @@
                     </div>
                 </article>
             </li>
+
         </ul>
-        <button @click="fetch">追加</button>
-        <p>{{ length }}件 fetch しました</p>
+        <button @click="fetch" v-show="show">もっと見る</button>
     </div>
 </template>
 <style Scoped>
@@ -61,38 +63,17 @@
     }
 </style>
 <script>
-///import wp from '@/assets/js/wp.js';
 import axios from 'axios'
-class WpApi {
-    // コンストラクタ
-    constructor (siteurl,category,page,per_page) {
-        this.apiBase = `${siteurl}/wp-json`;
-        this.page = `${page}`;
-        this.per_page = `${per_page}`;
-    }
-
-    posts () {
-        return axios.get(`${this.apiBase}/wp/v2/posts?_embed`, {
-        params: {
-            page: this.page,
-            per_page: this.per_page
-        }
-        }).then(json => {
-            this.page = this.page+1;
-            return { posts: json.data }
-        }).catch(e => {
-            return { error: e }
-        })
-    }
-}
-let wp = new WpApi("https://aoiblog.org","",1,9);
-
 export default {
     layout: 'blog', // ページコンポーネントの定義
     data() {
         return {
             title: 'ブログ | illustration',
-            posts: {}
+            search: '',
+            posts: "",
+            count: 1,
+            per_page: 6,
+            show: true
         }
     },
     head () {
@@ -101,22 +82,42 @@ export default {
             title: this.title,
         }
     },
-    asyncData ({ params }) {
-        return wp.posts();
-    },
     created() {
-
+        axios.get(`https://aoiblog.org/wp-json/wp/v2/posts?_embed`, {
+            params: {
+                page: 1,
+                per_page: this.per_page
+            }
+        }).then(response => {this.posts = response.data;
+        }).catch(e => {
+            return { error: e }
+        })
     },
     methods: {
         fetch() {
-            
-        }
-    },
-    computed: {
-        length() {
-            return this.posts.length
-        }
+            var countPlus = this.posts.length;
+            this.count += 1;
+            axios.get(`https://aoiblog.org/wp-json/wp/v2/posts?_embed`, {
+            params: {
+                    page: this.count,
+                    per_page: 6
+                }
+            }).then(response => {
+                Array.prototype.push.apply(this.posts,response.data);
+                this.per_page += 6;
+                console.log(this.per_page);
+                this.posts.splice();
+                if(this.posts.length == this.per_page) {
+                    this.show = true;
+                }
+                else {
+                    this.show = false;
+                }
+            }).catch(e => {
+                return { error: e }
+            })
+        },
     }
 }
-    
+
 </script>
