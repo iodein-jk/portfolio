@@ -10,6 +10,7 @@
 </script>
 <style>
     footer {
+        margin-top: 64px;
         text-align: center;
     }
 </style>

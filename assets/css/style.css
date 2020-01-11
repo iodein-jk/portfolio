@@ -87,17 +87,3 @@ img {
 
 /*　#コンポーネント
 ---- */
-button {
-    background-color: #006ac5;
-    border-radius: 0.8em;
-    color: #fff;
-    display: block;
-    font-size: 1.6rem;
-    margin-top: 24px;;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1;
-    padding: 16px 24px;
-    text-align: center;
-    width: 160px;
-}
