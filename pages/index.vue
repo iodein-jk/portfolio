@@ -42,7 +42,11 @@ export default {
 }
 </script>
 
-<style>
+<style Scoped>
+    .home {
+        margin-top: 48px;
+    }
+    
     .home-nav {
         padding-left: 32px;
     }

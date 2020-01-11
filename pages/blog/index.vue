@@ -1,6 +1,6 @@
 <template>
     <div>
-        <blogArchive/>
+        <blogArchive pageTitle="ブログ"/>
     </div>
 </template>
 <script>

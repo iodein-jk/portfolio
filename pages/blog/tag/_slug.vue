@@ -1,6 +1,6 @@
 <template>
     <div>
-        <blogArchive :parmSlug="slug" :pageTitle="titleName.name"/>
+        <blogArchive :parmTag="slug" :pageTitle="titleName.name"/>
     </div>
 </template>
 <script>
@@ -21,7 +21,7 @@ export default {
         return { slug : params.slug };
     },
     created() {
-        axios.get(`https://aoiblog.org/wp-json/wp/v2/categories/${this.slug}`, {
+        axios.get(`https://aoiblog.org/wp-json/wp/v2/tags/${this.slug}`, {
         }).then(response => {this.titleName = response.data;
         }).catch(error => {
             console.log(error)

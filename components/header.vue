@@ -1,15 +1,13 @@
 <template>
     <header>
         <div class="ex-header">
-            <div class="container-wrap01">
-                <p>ヘッダーが入ります。ヘッダーが入ります。ヘッダーが入ります。ヘッダーが入ります。</p>
-            </div>
+            <h1 class="ex-header-logo"><nuxt-link to="/">サイトタイトル（仮）</nuxt-link></h1>
         </div>
         <nav class="ex-nav">
             <ul class="container-wrap01">
                 <li><nuxt-link to="/">Home</nuxt-link></li>
                 <li><nuxt-link to="/blog">Blog</nuxt-link></li>
-                <li><nuxt-link to="/work">Work</nuxt-link></li>
+                <li><nuxt-link to="/works">Works</nuxt-link></li>
                 <li><nuxt-link to="/profile">Profile</nuxt-link></li>
                 <li><nuxt-link to="/faq">Faq</nuxt-link></li>
                 <li><nuxt-link to="/contact">Contact</nuxt-link></li>
@@ -23,12 +21,37 @@
 
 <style>
     .ex-header {
-        padding-top: 32px;
-        padding-bottom: 32px;
+        background-color: rgba(255,255,255,.7);
+        -webkit-backdrop-filter: saturate(160%) blur(24px);
+        backdrop-filter: saturate(160%) blur(24px);
+        background-color: hsla(0,0%,100%,.7);
+        font-size: 20px;
+        font-weight: bold;
+        padding: 12px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .ex-header-logo {
+        line-height: 1;
+        margin: 0;
+    }
+
+    .ex-header a {
+        color: #333;
+        display: block;
+        font-size: 20px;
+        text-decoration: none;
     }
 
     .ex-nav {
-        padding-bottom: 32px;
+        border-top: solid 1px #ddd;
+        border-bottom: solid 1px #ddd;
+        margin-top: 44px;
     }
     
     .ex-nav ul {
@@ -39,20 +62,20 @@
 
     .ex-nav li {
         box-sizing: border-box;
-        margin-left: 8px;
-        margin-right: 8px;
         text-align: center;
         width: 16.66666666666667%;
     }
 
     .ex-nav a {
-        border-bottom: solid 2px #ddd;
         display: block;
+        padding-top: 6px;
+        padding-bottom: 6px;
         text-decoration: none;
     }
-
-    .ex-nav .nuxt-link-exact-active {
-        border-color: #00c58e;
-        color: #00c58e;
+    
+    .ex-nav a:hover,
+    .ex-nav .nuxt-link-active {
+        background-color: #00c58e;
+        color: #fff;
     }
 </style>
