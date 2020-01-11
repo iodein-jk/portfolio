@@ -1,5 +1,6 @@
 <template>
     <div class="container-wrap01">
+        <p>値：{{ parmSlug }}</p>
         <div class="archive__search">
             <input v-model="search" placeholder="記事を検索する">
             <div class="archive__search-list">
@@ -31,6 +32,7 @@ const pages = 6;
 const wpApi = "https://aoiblog.org/wp-json/wp/v2/posts?_embed"
 export default {
     layout: 'blog', // ページコンポーネントの定義
+    props: ['parmSlug'],
     data() {
         return {
             title: 'ブログ | illustration',
@@ -48,17 +50,6 @@ export default {
             // このページ向けにメタタグを設定します
             title: this.title,
         }
-    },
-    asyncData ({ params }) {
-        // console.log(params)
-        // console.log(params.slug)
-        // return axios.get(`https://hoge.com/wp-json/wp/v2/book?slug=${params.slug}`)
-        // .then(response => {
-        //     return { slug: response.data }
-        // })
-        // .catch((error) => {
-        //     return { error: error }
-        // })
     },
     created() {
         console.log(this.slug);
