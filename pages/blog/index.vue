@@ -7,12 +7,13 @@
 import blogArchive from "@/components/blog_archive.vue";
 
 export default {
+    layout: 'blog', // ページコンポーネントの定義
     components: {
         blogArchive,
     },
 }
 </script>
 
-<style Scoped>
+<style scoped>
 
 </style>

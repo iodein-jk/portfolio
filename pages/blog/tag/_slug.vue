@@ -7,6 +7,7 @@
 import blogArchive from "@/components/blog_archive.vue";
 import axios from 'axios'
 export default {
+    layout: 'blog', // ページコンポーネントの定義
     data() {
         return {
             titleName: "",

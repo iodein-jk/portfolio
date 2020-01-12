@@ -33,7 +33,6 @@ import axios from 'axios'
 const pages = 9;
 const wpApi = "https://aoiblog.org/wp-json/wp/v2/posts?_embed"
 export default {
-    layout: 'blog', // ページコンポーネントの定義
     props: ['pageTitle','parmSlug','parmTag'],
     data() {
         return {
@@ -145,7 +144,7 @@ export default {
 }
 </script>
 
-<style Scoped>
+<style scoped>
     .archive__title {
         background: #fafafa;
         font-weight: 500;

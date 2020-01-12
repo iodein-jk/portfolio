@@ -19,7 +19,7 @@
 	export default {};
 </script>
 
-<style>
+<style Scoped>
     .ex-header {
         background-color: rgba(255,255,255,.7);
         -webkit-backdrop-filter: saturate(160%) blur(24px);
