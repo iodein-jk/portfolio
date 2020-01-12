@@ -1,5 +1,5 @@
 
-
+import axios from 'axios'
 module.exports = {
   /*
   ** Headers of the page
@@ -42,6 +42,27 @@ module.exports = {
     }
   },
   generate: {
-    fallback: true
+    fallback: true,
+    routes () {
+      return Promise.all([
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/'),
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/')
+      ])
+      .then((res) => {
+        const postCategorys = res[0]
+        const postTags = res[1]
+        return postCategorys.data.map((postCategory) => {
+          return {
+            route: '/blog/category/' + postCategory.id,
+            payload: postCategory
+          }
+        }).concat(postTags.data.map((postTag) => {
+          return {
+            route: '/blog/tag/' + postTag.id,
+            payload: postTag
+          }
+        }))
+      })
+    }
   }
 }
