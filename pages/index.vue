@@ -14,7 +14,7 @@
                             <p>制作日記や日常などの記事の一覧です</p>
                         </li>
                         <li>
-                            <nuxt-link to="/work">Work</nuxt-link>
+                            <nuxt-link to="/works">Work</nuxt-link>
                             <p>カテゴリー別に制作実績を紹介しています</p>
                         </li>
                         <li>

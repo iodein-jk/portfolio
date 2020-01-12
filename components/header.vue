@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="ex-header">
-            <h1 class="ex-header-logo"><nuxt-link to="/">サイトタイトル（仮）</nuxt-link></h1>
+            <h1 class="ex-header-logo"><nuxt-link to="/">Aoiblog</nuxt-link></h1>
         </div>
         <nav class="ex-nav">
             <ul class="container-wrap01">

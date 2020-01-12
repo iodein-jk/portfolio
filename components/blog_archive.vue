@@ -36,7 +36,7 @@ export default {
     props: ['pageTitle','parmSlug','parmTag'],
     data() {
         return {
-            title: ' | illustration',
+            title: ' | Aoiblog',
             search: '',
             posts: "",
             count: 1,
