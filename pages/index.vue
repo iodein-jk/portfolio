@@ -43,9 +43,6 @@ export default {
 </script>
 
 <style Scoped>
-    .home {
-        margin-top: 48px;
-    }
     
     .home-nav {
         padding-left: 32px;
@@ -63,11 +60,21 @@ export default {
         font-size: 1.4rem;
     }
 
+    .column2-left-golden-main {
+        margin-bottom: 40px;
+    }
+
     @media (min-width: 748px) {
+        .home {
+            margin-top: 48px;
+        }
         .home-main {
             display: flex;
             display: -webkit-flex;
             display: -ms-flex;
+        }
+        .column2-left-golden-main {
+            margin-bottom: 0;
         }
     }
 </style>
