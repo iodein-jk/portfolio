@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import blogArchive from "@/components/blog_archive.vue";
+import blogArchive from "@/components/works_archive.vue";
 import axios from 'axios'
 export default {
     layout: 'blog', // ページコンポーネントの定義
@@ -22,7 +22,7 @@ export default {
         return { slug : params.slug };
     },
     created() {
-        axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/${this.slug}`, {
+        axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category//${this.slug}`, {
         }).then(response => {this.titleName = response.data;
         }).catch(error => {
             console.log(error)

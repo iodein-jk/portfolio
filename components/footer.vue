@@ -8,7 +8,7 @@
 <script>
 	export default {};
 </script>
-<style>
+<style scoped>
     footer {
         margin-top: 64px;
         text-align: center;

@@ -22,7 +22,7 @@ export default {
         return { slug : params.slug };
     },
     created() {
-        axios.get(`https://aoiblog.org/wp-json/wp/v2/tags/${this.slug}`, {
+        axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/${this.slug}`, {
         }).then(response => {this.titleName = response.data;
         }).catch(error => {
             console.log(error)

@@ -31,7 +31,7 @@
 <script>
 import axios from 'axios'
 const pages = 9;
-const wpApi = "https://aoiblog.org/wp-json/wp/v2/posts?_embed"
+const wpApi = "https://aoiblog.org/blog/entry/wp-json/wp/v2/posts?_embed"
 export default {
     props: ['pageTitle','parmSlug','parmTag'],
     data() {
