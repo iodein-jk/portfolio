@@ -45,8 +45,8 @@ module.exports = {
     fallback: true,
     routes () {
       return Promise.all([
-        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/'),
-        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/')
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/?per_page=100'),
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/?per_page=100')
       ])
       .then((res) => {
         const postCategorys = res[0]
