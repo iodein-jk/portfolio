@@ -3,7 +3,7 @@
         <div class="container-wrap01 home-main">
             <div class="column2-left-golden-main">
                 <div>
-                    <img src="http://placehold.jp/618x400.png" alt="">
+                    <img src="https://placehold.jp/618x400.png" alt="">
                 </div>
             </div>
             <div class="column2-right-golden-side">

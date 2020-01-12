@@ -155,6 +155,8 @@ export default {
     .archive__search {
         margin: 32px auto;
         max-width: 500px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .archive__search input {
         border: solid 1px #ccc;
@@ -170,8 +172,8 @@ export default {
 
     .archive__post-list li {
         box-sizing: border-box;
-        padding: 12px;
-        width: 33.33333%;
+        padding: 6px;
+        width: 50%;
     }
 
     .archive__post-list figure {
@@ -180,8 +182,9 @@ export default {
     }
 
     .archive__post-title {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
+        line-height: 1.3;
     }
 
     .archive__post-list a {
@@ -189,16 +192,8 @@ export default {
     }
 
     .archive__post-list p {
-        font-size: 12px;
-    }
-
-    .archive__post-infomation {
-        display: flex;
-        display: -webkit-flex;
-    }
-
-    .archive__post-infomation p + p {
-        margin-left: 1em;
+        opacity: 0.6;
+        font-size: 10px;
     }
 
     .archive__null {
@@ -230,12 +225,35 @@ export default {
     .archive__search-list button {
         background-color: #fafafa;
         color: #464242;
+        font-size: 12px;
         margin: 8px;
         padding: 6px 8px;
         line-height: 1;
     }
 
-    @media (max-width: 764px) {
-        .archive__post-list li { width: 50%; }
+    @media (min-width: 740px) {
+        .archive__search-list button {
+            font-size: 14px;
+        }
+
+        .archive__post-list li {
+            padding: 12px;
+            width: 33.33333%;
+        }
+        .archive__post-title {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        .archive__post-infomation {
+            display: flex;
+            display: -webkit-flex;
+        }
+        .archive__post-list p {
+            opacity: 1;
+        }
+
+        .archive__post-infomation p + p {
+            margin-left: 1em;
+        }
     }
 </style>

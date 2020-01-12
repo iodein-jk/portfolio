@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="container-wrap01">
-        <p><small>&copy;</small></p>
+        <p><small>Copyright - aoiblog, 2019 All Rights Reserved.</small></p>
         </div>
     </footer>
 </template>
