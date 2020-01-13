@@ -9,8 +9,8 @@
                 <li><nuxt-link to="/blog">Blog</nuxt-link></li>
                 <li><nuxt-link to="/works">Works</nuxt-link></li>
                 <li><nuxt-link to="/profile">Profile</nuxt-link></li>
-                <li><nuxt-link to="/faq">Faq</nuxt-link></li>
-                <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+                <li><a href="https://www.youtube.com/channel/UCciSDSgF9XQmSPoH2YtE50g?view_as=subscriber" target="_blank">Youtube</a></li>
+                <li><a href="https://twitter.com/iodein_jk" target="_blank">Twitter</a></li>
             </ul>
         </nav>
     </header>

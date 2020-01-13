@@ -1,31 +1,31 @@
 <template>
     <div>
-        {{posts}}
-        <h2 class="archive__title">{{pageTitle}}</h2>
+        <h2 class="works__title">{{pageTitle}}</h2>
         <div class="container-wrap01">
-            <div class="archive__search">
+            <div class="works__search">
                 <input v-model="search" placeholder="記事を検索する">
-                <div class="archive__search-list">
-                    <button @click="searchClick('Wordpress');">Wordpress</button>
-                    <button @click="searchClick('Web');">Web</button>
-                    <button @click="searchClick('イラスト');">イラスト</button>
-                    <button @click="searchClick('雑記');">雑記</button>
+                <div class="works__search-list">
+                    <button @click="searchClick('五等分の花嫁');">五等分の花嫁</button>
+                    <button @click="searchClick('冴え');">冴え</button>
+                    <button @click="searchClick('Webサイト');">Webサイト</button>
                 </div>
             </div>
-            <ul class="archive__post-list">
-                <li v-for="post in posts" :key="post.id" class="parchive__post-card">
+            <ul class="works__post-list">
+                <li v-for="post in posts" :key="post.id" class="pworks__post-card">
                     <article>
-                        <figure><a :href="post.link"><img :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url" :width="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.width" :height="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.height" :alt="post.title.rendered"></a></figure>
-                        <h2 class="archive__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
-                        <div class="archive__post-infomation">
+                        <a :href="'/works/entry/'+post.id" :style="'background-image:url('+post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url+')'">
+
+                        </a>
+                        <!-- <h2 class="works__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
+                        <div class="works__post-infomation">
                             <p><nuxt-link :to="'/blog/category/'+post._embedded['wp:term'][0][0].id">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
                             <p>{{ post.date }}</p>
-                        </div>
+                        </div> -->
                     </article>
                 </li>
             </ul>
-            <p class="archive__null" v-show="postSearch">記事が見つかりませんでした。</p>
-            <button class="archive__more" @click="fetch" v-show="show">もっと見る</button>
+            <p class="works__null" v-show="postSearch">作品が見つかりませんでした。</p>
+            <button class="works__more" @click="fetch" v-show="show">もっと見る</button>
         </div>
     </div>
 </template>
@@ -57,7 +57,8 @@ export default {
     created() {
         axios.get(`${wpApi}`, {
             params: {
-                works_category:9,
+                works_tag: this.tag,
+                works_category: this.category,
                 page: 1,
                 per_page: pages
             }
@@ -81,6 +82,8 @@ export default {
             this.per_page = pages;
             axios.get(`${wpApi}`, {
                 params: {
+                    works_tag: this.tag,
+                    works_category: this.category,
                     search: this.search,
                     page: 1,
                     per_page: this.per_page
@@ -112,6 +115,8 @@ export default {
 
             axios.get(`${wpApi}`, {
                 params: {
+                    works_tag: this.tag,
+                    works_category: this.category,
                     search: this.search,
                     page: this.count,
                     per_page: pages
@@ -141,67 +146,69 @@ export default {
 </script>
 
 <style scoped>
-    .archive__title {
+    .works__title {
         background: #fafafa;
         font-weight: 500;
         padding-top: 36px;
         padding-bottom: 36px;
         text-align: center;
     }
-    .archive__search {
+    .works__search {
         margin: 32px auto;
         max-width: 500px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    .archive__search input {
+    .works__search input {
         border: solid 1px #ccc;
         font-size: 1.6rem;
         padding: 8px;
         width: 100%;
     }
-    .archive__post-list {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-    }
-
-    .archive__post-list li {
-        box-sizing: border-box;
-        padding: 12px;
-        width: 33.33333%;
-    }
-
-    .archive__post-list figure {
-        line-height: 1;
-        margin-bottom: 4px;
-    }
-
-    .archive__post-title {
-        font-size: 16px;
-        font-weight: 500;
-    }
-
-    .archive__post-list a {
-        text-decoration: none;
-    }
-
-    .archive__post-list p {
-        font-size: 12px;
-    }
-
-    .archive__post-infomation {
+    .works__search-list {
         display: flex;
         display: -webkit-flex;
+        flex-wrap: wrap;
+        margin-top: 16px;
     }
 
-    .archive__post-infomation p + p {
-        margin-left: 1em;
+    .works__search-list button {
+        background-color: #fafafa;
+        color: #464242;
+        font-size: 12px;
+        margin: 8px;
+        padding: 6px 8px;
+        line-height: 1;
+    }
+    .works__post-list {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        list-style-type: none;
     }
 
-    .archive__null {
-        text-align: center;
+    .works__post-list li {
+        width: 50%;
     }
 
-    .archive__more {
+    .works__post-list li a {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        width: 100%;
+    }
+
+    .works__post-list li a::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+
+    .works__post-list li img {
+        object-fit: cover;
+    }
+    .works__more {
         background-color: #006ac5;
         border-radius: 0.8em;
         color: #fff;
@@ -215,23 +222,15 @@ export default {
         text-align: center;
         width: 160px;
     }
-
-    .archive__search-list {
-        display: flex;
-        display: -webkit-flex;
-        flex-wrap: wrap;
-        margin-top: 16px;
+    .works__null {
+        text-align: center;
     }
-
-    .archive__search-list button {
-        background-color: #fafafa;
-        color: #464242;
-        margin: 8px;
-        padding: 6px 8px;
-        line-height: 1;
-    }
-
-    @media (max-width: 764px) {
-        .archive__post-list li { width: 50%; }
+    @media (min-width: 764px) {
+        .works__search-list button {
+            font-size: 14px;
+        }
+        .works__post-list li {
+            width: 25%;
+        }
     }
 </style>

@@ -164,6 +164,21 @@ export default {
         padding: 8px;
         width: 100%;
     }
+    .archive__search-list {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .archive__search-list button {
+        background-color: #fafafa;
+        color: #464242;
+        font-size: 12px;
+        margin: 8px;
+        padding: 6px 8px;
+        line-height: 1;
+    }
     .archive__post-list {
         display: flex;
         flex-wrap: wrap;
@@ -213,22 +228,6 @@ export default {
         padding: 16px 24px;
         text-align: center;
         width: 160px;
-    }
-
-    .archive__search-list {
-        display: flex;
-        display: -webkit-flex;
-        flex-wrap: wrap;
-        margin-top: 16px;
-    }
-
-    .archive__search-list button {
-        background-color: #fafafa;
-        color: #464242;
-        font-size: 12px;
-        margin: 8px;
-        padding: 6px 8px;
-        line-height: 1;
     }
 
     @media (min-width: 740px) {

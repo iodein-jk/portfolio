@@ -1,13 +1,13 @@
 <template>
     <div>
-        <blogArchive :parmSlug="slug" :pageTitle="titleName.name"/>
+        <worksArchive :parmSlug="slug" :pageTitle="titleName.name"/>
     </div>
 </template>
 <script>
-import blogArchive from "@/components/works_archive.vue";
+import worksArchive from "@/components/works_archive.vue";
 import axios from 'axios'
 export default {
-    layout: 'blog', // ページコンポーネントの定義
+    layout: 'works', // ページコンポーネントの定義
     data() {
         return {
             titleName: "",
@@ -15,14 +15,14 @@ export default {
         }
     },
     components: {
-        blogArchive,
+        worksArchive,
     },
     asyncData ({ params }) {
-        //console.log(params.slug);
+        //c¥¥onsole.log(params.slug);
         return { slug : params.slug };
     },
     created() {
-        axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category//${this.slug}`, {
+        axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category/${this.slug}`, {
         }).then(response => {this.titleName = response.data;
         }).catch(error => {
             console.log(error)

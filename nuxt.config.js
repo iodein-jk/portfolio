@@ -46,11 +46,17 @@ module.exports = {
     routes () {
       return Promise.all([
         axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/?per_page=100'),
-        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/?per_page=100')
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/?per_page=100'),
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category/?per_page=100'),
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/works_tag/?per_page=100'),
+        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/works?_embed&per_page=100')
       ])
       .then((res) => {
         const postCategorys = res[0]
         const postTags = res[1]
+        const worksCategorys = res[2]
+        const worksTags = res[3]
+        const worksDetails = res[4]
         return postCategorys.data.map((postCategory) => {
           return {
             route: '/blog/category/' + postCategory.id,
@@ -60,6 +66,21 @@ module.exports = {
           return {
             route: '/blog/tag/' + postTag.id,
             payload: postTag
+          }
+        })).concat(worksCategorys.data.map((worksCategory) => {
+          return {
+            route: '/works/category/' + worksCategory.id,
+            payload: worksCategory
+          }
+        })).concat(worksTags.data.map((worksTag) => {
+          return {
+            route: '/works/tag/' + worksTag.id,
+            payload: worksTag
+          }
+        })).concat(worksDetails.data.map((worksDetail) => {
+          return {
+            route: '/works/entry/' + worksDetail.id,
+            payload: worksDetail
           }
         }))
       })

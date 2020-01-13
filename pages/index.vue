@@ -22,12 +22,12 @@
                             <p>自己紹介です</p>
                         </li>
                         <li>
-                            <nuxt-link to="/faq">Faq</nuxt-link>
-                            <p>制作依頼等をお送りいただける場合に質問いただいた内容を掲載しています</p>
+                            <a href="https://www.youtube.com/channel/UCciSDSgF9XQmSPoH2YtE50g?view_as=subscriber" target="_blank">Youtube</a>
+                            <p>動画やライブ配信情報を一覧にしています。</p>
                         </li>
                         <li>
-                            <nuxt-link to="/contact">Contact</nuxt-link>
-                            <p>お問い合わせフォームです</p>
+                            <a href="https://twitter.com/iodein_jk" target="_blank">Twitter</a>
+                            <p>お問い合わせやご依頼はお手数ですがTwitterのDMより一度ご連絡の程よろしくお願いいたします。</p>
                         </li>
                     </ul>
                 </nav>

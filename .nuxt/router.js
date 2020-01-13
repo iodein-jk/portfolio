@@ -8,6 +8,7 @@ const _18395cb4 = () => interopDefault(import('../pages/works/index.vue' /* webp
 const _5275cd32 = () => interopDefault(import('../pages/blog/category/_slug.vue' /* webpackChunkName: "pages/blog/category/_slug" */))
 const _17d75b17 = () => interopDefault(import('../pages/blog/tag/_slug.vue' /* webpackChunkName: "pages/blog/tag/_slug" */))
 const _602edcd6 = () => interopDefault(import('../pages/works/category/_slug.vue' /* webpackChunkName: "pages/works/category/_slug" */))
+const _21208bfe = () => interopDefault(import('../pages/works/entry/_slug.vue' /* webpackChunkName: "pages/works/entry/_slug" */))
 const _4ff8fe29 = () => interopDefault(import('../pages/works/tag/_slug.vue' /* webpackChunkName: "pages/works/tag/_slug" */))
 const _4d1d86b3 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -47,6 +48,10 @@ export const routerOptions = {
     path: "/works/category/:slug?",
     component: _602edcd6,
     name: "works-category-slug"
+  }, {
+    path: "/works/entry/:slug?",
+    component: _21208bfe,
+    name: "works-entry-slug"
   }, {
     path: "/works/tag/:slug?",
     component: _4ff8fe29,
