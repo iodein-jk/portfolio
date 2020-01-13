@@ -18,7 +18,7 @@
                         <h2 class="archive__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
                         <div class="archive__post-infomation">
                             <p><nuxt-link :to="'/blog/category/'+post._embedded['wp:term'][0][0].id">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
-                            <p>{{ post.date }}</p>
+                            <p class="archive__post-date">{{ post.date }}</p>
                         </div>
                     </article>
                 </li>
@@ -174,7 +174,7 @@ export default {
     .archive__search-list button {
         background-color: #fafafa;
         color: #464242;
-        font-size: 12px;
+        font-size: 1.2rem;
         margin: 8px;
         padding: 6px 8px;
         line-height: 1;
@@ -197,7 +197,7 @@ export default {
     }
 
     .archive__post-title {
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 500;
         line-height: 1.3;
     }
@@ -208,7 +208,11 @@ export default {
 
     .archive__post-list p {
         opacity: 0.6;
-        font-size: 10px;
+        font-size: 1.2rem;
+    }
+
+    .archive__post-date {
+        display: none;
     }
 
     .archive__null {
@@ -232,7 +236,7 @@ export default {
 
     @media (min-width: 740px) {
         .archive__search-list button {
-            font-size: 14px;
+            font-size: 1.4rem;
         }
 
         .archive__post-list li {
@@ -240,15 +244,20 @@ export default {
             width: 33.33333%;
         }
         .archive__post-title {
-            font-size: 16px;
+            font-size: 1.6rem;
             line-height: 1.4;
         }
         .archive__post-infomation {
             display: flex;
             display: -webkit-flex;
         }
+
         .archive__post-list p {
             opacity: 1;
+        }
+
+        .archive__post-date {
+            display: block;
         }
 
         .archive__post-infomation p + p {

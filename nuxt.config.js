@@ -41,6 +41,15 @@ module.exports = {
       }
     }
   },
+  modules: [
+    [
+      '@nuxtjs/google-gtag',
+      {
+        id: 'UA-126623343-1', //あなたのGoogleアナリティクスのプロパティID
+        debug: true //本番環境以外でもGAを有効にしたい場合はtrueに。
+      }
+    ]
+  ],
   generate: {
     fallback: true,
     routes () {

@@ -3,7 +3,7 @@
         <h2 class="works__title">{{pageTitle}}</h2>
         <div class="container-wrap01">
             <div class="works__search">
-                <input v-model="search" placeholder="記事を検索する">
+                <input v-model="search" placeholder="作品を検索する">
                 <div class="works__search-list">
                     <button @click="searchClick('五等分の花嫁');">五等分の花嫁</button>
                     <button @click="searchClick('冴え');">冴え</button>
@@ -14,13 +14,8 @@
                 <li v-for="post in posts" :key="post.id" class="pworks__post-card">
                     <article>
                         <a :href="'/works/entry/'+post.id" :style="'background-image:url('+post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url+')'">
-
+                            <h2 class="works__post-title">{{ post.title.rendered }}</h2>
                         </a>
-                        <!-- <h2 class="works__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
-                        <div class="works__post-infomation">
-                            <p><nuxt-link :to="'/blog/category/'+post._embedded['wp:term'][0][0].id">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
-                            <p>{{ post.date }}</p>
-                        </div> -->
                     </article>
                 </li>
             </ul>
@@ -175,7 +170,7 @@ export default {
     .works__search-list button {
         background-color: #fafafa;
         color: #464242;
-        font-size: 12px;
+        font-size: 1.2rem;
         margin: 8px;
         padding: 6px 8px;
         line-height: 1;
@@ -196,7 +191,27 @@ export default {
         background-repeat: no-repeat;
         background-size: cover;
         display: block;
+        position: relative;
         width: 100%;
+    }
+
+    .works__post-title {
+        background-color: rgba(0,0,0,0.6);
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1;
+        opacity: 0;
+        padding: 8px 16px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+    }
+
+    .works__post-list li a:hover .works__post-title {
+        opacity: 1;
     }
 
     .works__post-list li a::before {
@@ -227,7 +242,7 @@ export default {
     }
     @media (min-width: 764px) {
         .works__search-list button {
-            font-size: 14px;
+            font-size: 1.4rem;
         }
         .works__post-list li {
             width: 25%;

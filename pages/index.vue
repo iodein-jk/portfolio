@@ -2,8 +2,8 @@
     <div class="home">
         <div class="container-wrap01 home-main">
             <div class="column2-left-golden-main">
-                <div>
-                    <img src="https://placehold.jp/618x400.png" alt="">
+                <div class="frame-wrapper__video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HaQQJu1iWKQ?rel=0&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="column2-right-golden-side">
@@ -42,10 +42,26 @@ export default {
 }
 </script>
 
-<style Scoped>
-    
+<style scoped>
+    .frame-wrapper__video {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+
+    .frame-wrapper__video iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .home-nav {
-        padding-left: 32px;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
     .home-nav ul {
@@ -54,6 +70,12 @@ export default {
 
     .home-nav ul li:not(:first-child) {
         margin-top: 16px;
+    }
+
+    .home-nav a {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 8px;
     }
 
     .home-nav p {
@@ -75,6 +97,9 @@ export default {
         }
         .column2-left-golden-main {
             margin-bottom: 0;
+        }
+        .home-nav {
+            padding-left: 32px;
         }
     }
 </style>

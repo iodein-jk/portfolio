@@ -19,7 +19,7 @@ import _7841994c from '../layouts/works.vue'
 const layouts = { "_blog": _2d21d098,"_default": _6f6c098b,"_works": _7841994c }
 
 export default {
-  head: {"title":"Aoiblog","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Fblog\u002Fentry\u002Fwp-content\u002Fthemes\u002Fblog\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"title":"Aoiblog","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Fblog\u002Fentry\u002Fwp-content\u002Fthemes\u002Fblog\u002Ffavicon.ico"}],"style":[],"script":[{"src":"https:\u002F\u002Fwww.googletagmanager.com\u002Fgtag\u002Fjs?id=UA-126623343-1","async":true}]},
 
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
