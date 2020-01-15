@@ -79,7 +79,8 @@ export default {
     }
 
     .home-nav p {
-        font-size: 1.4rem;
+        color: var(--fontC-sub-color);
+        font-size: 1.28rem;
     }
 
     .column2-left-golden-main {

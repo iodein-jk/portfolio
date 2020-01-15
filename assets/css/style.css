@@ -29,13 +29,21 @@
 ---- */
 /*　#サイトベース 
 ---- */
+:root {
+    --fontC-main-color: #fff;
+    --fontC-sub-color: #ffffff99;
+    --link-color: #3498db;
+    --bg-main-color: #1e1e1e;
+    --bg-sub-color: rgba(44,44,40,0.7);
+    --bg-input-color: #111111;
+}
 html {
     font-size: 62.5%; /*remサイズ指定用の文字サイズ全体統一*/
 }
 
 body {
-    background: #fff; /*全体背景色 - もしくはパターン*/
-    color: #333; /*ベース文字色*/
+    background: var(--bg-main-color); /*全体背景色 - もしくはパターン*/
+    color: var(--fontC-main-color); /*ベース文字色*/
     font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
     font-weight: 500;
     font-size: 1.6rem;
@@ -43,12 +51,12 @@ body {
 }
 
 a { /*文字リンクの基本仕様*/
-    color: #333;
+    color: var(--fontC-main-color);
     text-decoration: underline;
 }
 
 a:hover { /*デフォルトの文字リンクホバーアクション*/
-    color: #00c58e;
+    color: var(--link-color);
     text-decoration: none;
 }
 

@@ -65,7 +65,7 @@ export default {
 
 <style>
 .workssingle__image {
-    background-color: #fafafa;
+    background: var(--bg-sub-color);
     margin-bottom: 24px;
     text-align: center;
 }
@@ -109,7 +109,7 @@ export default {
 }
 
 .workssingle__content h2 {
-    border-bottom: solid 2px #ddd;
+    border-bottom: solid 2p;
     font-size: 2rem;
 }
 

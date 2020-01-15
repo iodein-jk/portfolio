@@ -142,7 +142,7 @@ export default {
 
 <style scoped>
     .works__title {
-        background: #fafafa;
+        background: var(--bg-sub-color);
         font-weight: 500;
         padding-top: 36px;
         padding-bottom: 36px;
@@ -155,7 +155,9 @@ export default {
         padding-right: 10px;
     }
     .works__search input {
-        border: solid 1px #ccc;
+        background-color: var(--bg-input-color);
+        border: solid 1px;
+        color: var(--fontC-main-color);
         font-size: 1.6rem;
         padding: 8px;
         width: 100%;
@@ -168,7 +170,7 @@ export default {
     }
 
     .works__search-list button {
-        background-color: #fafafa;
+        background-color: var(--fontC-sub-color);
         color: #464242;
         font-size: 1.2rem;
         margin: 8px;

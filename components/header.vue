@@ -20,11 +20,9 @@
 
 <style Scoped>
     .ex-header {
-        background-color: rgba(255,255,255,.7);
+        background-color: var(--bg-sub-color);
         -webkit-backdrop-filter: saturate(160%) blur(24px);
         backdrop-filter: saturate(160%) blur(24px);
-        background-color: hsla(0,0%,100%,.7);
-        font-size: 20px;
         font-weight: bold;
         padding: 12px;
         text-align: center;
@@ -41,15 +39,14 @@
     }
 
     .ex-header a {
-        color: #333;
         display: block;
-        font-size: 20px;
+        font-size: 2rem;
         text-decoration: none;
     }
 
     .ex-nav {
-        border-top: solid 1px #ddd;
-        border-bottom: solid 1px #ddd;
+        border-top: solid 1px var(--fontC-sub-color);
+        border-bottom: solid 1px var(--fontC-sub-color);
         margin-top: 44px;
     }
     

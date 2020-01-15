@@ -146,7 +146,7 @@ export default {
 
 <style scoped>
     .archive__title {
-        background: #fafafa;
+        background: var(--bg-sub-color);
         font-weight: 500;
         padding-top: 36px;
         padding-bottom: 36px;
@@ -159,7 +159,9 @@ export default {
         padding-right: 10px;
     }
     .archive__search input {
-        border: solid 1px #ccc;
+        background-color: var(--bg-input-color);
+        border: solid 1px;
+        color: var(--fontC-main-color);
         font-size: 1.6rem;
         padding: 8px;
         width: 100%;
@@ -172,7 +174,7 @@ export default {
     }
 
     .archive__search-list button {
-        background-color: #fafafa;
+        background-color: var(--fontC-sub-color);
         color: #464242;
         font-size: 1.2rem;
         margin: 8px;
@@ -209,6 +211,16 @@ export default {
     .archive__post-list p {
         opacity: 0.6;
         font-size: 1.2rem;
+    }
+
+    .archive__post-infomation {
+        margin-top: 4px;
+    }
+
+    .archive__post-infomation p,
+    .archive__post-infomation a {
+        color: var(--fontC-sub-color);
+        line-height: 1;
     }
 
     .archive__post-date {
@@ -258,6 +270,7 @@ export default {
 
         .archive__post-date {
             display: block;
+            line-break: 1;
         }
 
         .archive__post-infomation p + p {
