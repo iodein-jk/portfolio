@@ -161,7 +161,7 @@ export default {
     .archive__search input {
         background-color: var(--bg-input-color);
         border: solid 1px;
-        color: var(--fontC-main-color);
+        color: var(--fontC-sub-color);
         font-size: 1.6rem;
         padding: 8px;
         width: 100%;
@@ -174,7 +174,7 @@ export default {
     }
 
     .archive__search-list button {
-        background-color: var(--fontC-sub-color);
+        background-color: #efefef;
         color: #464242;
         font-size: 1.2rem;
         margin: 8px;
