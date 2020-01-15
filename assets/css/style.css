@@ -30,12 +30,22 @@
 /*　#サイトベース 
 ---- */
 :root {
-    --fontC-main-color: #fff;
-    --fontC-sub-color: #ffffff99;
+    --fontC-main-color: #333;
+    --fontC-sub-color: #565656;
     --link-color: #3498db;
-    --bg-main-color: #1e1e1e;
-    --bg-sub-color: rgba(44,44,40,0.7);
-    --bg-input-color: #111111;
+    --bg-main-color: #fff;
+    --bg-sub-color: rgba(255,255,255,0.7);
+    --bg-input-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fontC-main-color: #fff;
+        --fontC-sub-color: #ffffff99;
+        --bg-main-color: #1e1e1e;
+        --bg-sub-color: rgba(44,44,40,0.7);
+        --bg-input-color: #111111;
+    }
 }
 html {
     font-size: 62.5%; /*remサイズ指定用の文字サイズ全体統一*/
