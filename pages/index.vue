@@ -74,7 +74,7 @@ export default {
 
     .home-nav a {
         display: block;
-        font-size: 2rem;
+        font-size: 1.6rem;
         margin-bottom: 8px;
     }
 

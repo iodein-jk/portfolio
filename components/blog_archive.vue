@@ -24,7 +24,7 @@
                 </li>
             </ul>
             <p class="archive__null" v-show="postSearch">記事が見つかりませんでした。</p>
-            <button class="archive__more" @click="fetch" v-show="show">もっと見る</button>
+            <button class="archive__more" @click="fetch" v-show="show">ブログを読みこむ</button>
         </div>
     </div>
 </template>
@@ -231,7 +231,7 @@ export default {
         line-height: 1;
         padding: 16px 24px;
         text-align: center;
-        width: 160px;
+        width: 1８0px;
     }
 
     @media (min-width: 740px) {

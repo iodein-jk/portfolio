@@ -5,7 +5,6 @@
         </div>
         <nav class="ex-nav">
             <ul class="container-wrap01">
-                <li><nuxt-link to="/">Home</nuxt-link></li>
                 <li><nuxt-link to="/blog">Blog</nuxt-link></li>
                 <li><nuxt-link to="/works">Works</nuxt-link></li>
                 <li><nuxt-link to="/profile">Profile</nuxt-link></li>
@@ -63,13 +62,13 @@
     .ex-nav li {
         box-sizing: border-box;
         text-align: center;
-        width: 16.66666666666667%;
+        width: 20%;
     }
 
     .ex-nav a {
         display: block;
-        padding-top: 6px;
-        padding-bottom: 6px;
+        padding-top: 4px;
+        padding-bottom: 4px;
         text-decoration: none;
     }
     

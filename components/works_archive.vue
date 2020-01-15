@@ -20,7 +20,7 @@
                 </li>
             </ul>
             <p class="works__null" v-show="postSearch">作品が見つかりませんでした。</p>
-            <button class="works__more" @click="fetch" v-show="show">もっと見る</button>
+            <button class="works__more" @click="fetch" v-show="show">作品を読みこむ</button>
         </div>
     </div>
 </template>
