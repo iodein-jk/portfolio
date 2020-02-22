@@ -17,7 +17,7 @@
                         <figure><a :href="post.link"><img :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url" :width="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.width" :height="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.height" :alt="post.title.rendered"></a></figure>
                         <h2 class="archive__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
                         <div class="archive__post-infomation">
-                            <p><nuxt-link :to="'/blog?category='+post._embedded['wp:term'][0][0].id">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
+                            <p><nuxt-link @click.native="queryLink()" :to="{path:'/blog', query: {category:post._embedded['wp:term'][0][0].id }}">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
                             <p class="archive__post-date">{{ post.date }}</p>
                         </div>
                     </article>
@@ -36,8 +36,7 @@ export default {
     props: ['pageTitle','parmSlug','parmTag'],
     data() {
         return {
-            title: ' | Aoiblog',
-            search: '',
+            search: this.$route.query.search,
             posts: "",
             pages: this.$route.query.pages,
             per_page: pages,
@@ -46,18 +45,18 @@ export default {
             show: true,
             postSearch: false,
             slug: "",
-            
         }
     },
     head () {
         return {
-            title: this.pageTitle+this.title
+            title: this.pageTitle,
         }
     },
     created() {
         this.pages = this.pages == undefined ? 1 : this.pages ;
         axios.get(`${wpApi}`, {
             params: {
+                search: this.search,
                 tags: this.tag,
                 categories: this.category,
                 page: this.pages,
@@ -68,7 +67,21 @@ export default {
             this.show = false;
             console.log(error)
         });
-        console.log(this.pages);
+        
+        if(this.category != "") {
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/${this.category}`, {
+            }).then(response => {this.pageTitle = response.data.name;
+            }).catch(error => {
+                console.log(error)
+            });
+        }
+        if(this.tag != "") {
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/${this.tag}`, {
+            }).then(response => {this.pageTitle = response.data.name;
+            }).catch(error => {
+                console.log(error)
+            });
+        }
     },
     watch: {
         search: function (value) {
@@ -93,6 +106,14 @@ export default {
             }).then(response => {
                 this.posts = response.data;
                 this.show = true;
+                this.pageTitle = this.search;
+                this.$router.replace({ 
+                    path: this.$route.path,
+                    query: { 
+                        search: this.search,
+                        pages: this.pages 
+                    } 
+                });
                 if(this.posts.length == 0) {
                     this.show = false;
                     this.postSearch = true;
@@ -133,6 +154,7 @@ export default {
                 this.$router.replace({ 
                     path: this.$route.path,
                     query: { 
+                        search: this.search,
                         tags: this.tag,
                         categories: this.category,
                         pages: this.pages 
@@ -152,6 +174,9 @@ export default {
         },
         searchClick(words) {
              this.search = words;
+        },
+        queryLink() {
+            this.$router.go({ path:'/blog', query: { category: this.$route.query.category } });
         }
         
     }

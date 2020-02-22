@@ -11,7 +11,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_googlegtag_2be1c261 from 'nuxt_plugin_googlegtag_2be1c261' // Source: .\\google-gtag.js (mode: 'client')
+import nuxt_plugin_googlegtag_3bb6b4fa from 'nuxt_plugin_googlegtag_3bb6b4fa' // Source: ./google-gtag.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -145,8 +145,8 @@ async function createApp (ssrContext) {
 
   // Plugin execution
 
-  if (process.client && typeof nuxt_plugin_googlegtag_2be1c261 === 'function') {
-    await nuxt_plugin_googlegtag_2be1c261(app.context, inject)
+  if (process.client && typeof nuxt_plugin_googlegtag_3bb6b4fa === 'function') {
+    await nuxt_plugin_googlegtag_3bb6b4fa(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

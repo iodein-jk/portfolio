@@ -20,7 +20,7 @@
 
 <style Scoped>
     .ex-header {
-        background-color: var(--bg-main-color);
+        background-color: var(--bg-header-color);
         -webkit-backdrop-filter: saturate(160%) blur(24px);
         backdrop-filter: saturate(160%) blur(24px);
         font-weight: bold;
