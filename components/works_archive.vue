@@ -26,7 +26,7 @@
 </template>
 <script>
 import axios from 'axios'
-const pages = 9;
+const pages = 4;
 const wpApi = "https://aoiblog.org/blog/entry/wp-json/wp/v2/works?_embed"
 export default {
     props: ['pageTitle','parmSlug','parmTag'],
@@ -35,7 +35,7 @@ export default {
             title: ' | Aoiblog',
             search: '',
             posts: "",
-            count: 1,
+            pages: this.$route.query.pages,
             per_page: pages,
             category: this.parmSlug,
             tag: this.parmTag ,
@@ -50,11 +50,12 @@ export default {
         }
     },
     created() {
+        this.pages = this.pages == undefined ? 1 : this.pages ;
         axios.get(`${wpApi}`, {
             params: {
                 works_tag: this.tag,
                 works_category: this.category,
-                page: 1,
+                page: this.pages,
                 per_page: pages
             }
         }).then(response => {this.posts = response.data;
@@ -73,7 +74,7 @@ export default {
                 this.tag = this.parmTag;
                 this.category = this.parmSlug;
             }
-            this.count = 1;
+            this.pages = 1;
             this.per_page = pages;
             axios.get(`${wpApi}`, {
                 params: {
@@ -105,21 +106,22 @@ export default {
     },
     methods: {
         fetch() {
-            var countPlus = this.posts.length;
-            this.count += 1;
+            var pagesPlus = this.posts.length;
+            this.pages++;
 
             axios.get(`${wpApi}`, {
                 params: {
                     works_tag: this.tag,
                     works_category: this.category,
                     search: this.search,
-                    page: this.count,
+                    page: this.pages,
                     per_page: pages
                 }
             }).then(response => {
                 Array.prototype.push.apply(this.posts,response.data);
                 this.per_page += pages;
                 this.posts.splice();
+                this.$router.replace({ path: this.$route.path, query: { pages: this.pages } });
                 if(this.posts.length == this.per_page) {
                     this.show = true;
                 }
@@ -142,7 +144,7 @@ export default {
 
 <style scoped>
     .works__title {
-        background: var(--bg-sub-color);
+        background: var(--bg-accent-color);
         font-weight: 500;
         padding-top: 36px;
         padding-bottom: 36px;

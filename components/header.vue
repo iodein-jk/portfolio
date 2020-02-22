@@ -20,7 +20,7 @@
 
 <style Scoped>
     .ex-header {
-        background-color: var(--bg-sub-color);
+        background-color: var(--bg-main-color);
         -webkit-backdrop-filter: saturate(160%) blur(24px);
         backdrop-filter: saturate(160%) blur(24px);
         font-weight: bold;
@@ -45,8 +45,7 @@
     }
 
     .ex-nav {
-        border-top: solid 1px var(--fontC-sub-color);
-        border-bottom: solid 1px var(--fontC-sub-color);
+        background-color: var(--bg-sub-color);
         margin-top: 44px;
     }
     

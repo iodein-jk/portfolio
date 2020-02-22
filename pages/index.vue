@@ -75,7 +75,8 @@ export default {
     .home-nav a {
         display: block;
         font-size: 1.6rem;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
+        line-height: 1;
     }
 
     .home-nav p {

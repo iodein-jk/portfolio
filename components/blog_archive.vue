@@ -39,13 +39,14 @@ export default {
             title: ' | Aoiblog',
             search: '',
             posts: "",
-            count: 1,
+            pages: this.$route.query.pages,
             per_page: pages,
             category: this.parmSlug,
             tag: this.parmTag ,
             show: true,
             postSearch: false,
             slug: "",
+            
         }
     },
     head () {
@@ -54,11 +55,12 @@ export default {
         }
     },
     created() {
+        this.pages = this.pages == undefined ? 1 : this.pages ;
         axios.get(`${wpApi}`, {
             params: {
                 tags: this.tag,
                 categories: this.category,
-                page: 1,
+                page: this.pages,
                 per_page: pages
             }
         }).then(response => {this.posts = response.data;
@@ -66,6 +68,7 @@ export default {
             this.show = false;
             console.log(error)
         });
+        console.log(this.pages);
     },
     watch: {
         search: function (value) {
@@ -77,7 +80,7 @@ export default {
                 this.tag = this.parmTag;
                 this.category = this.parmSlug;
             }
-            this.count = 1;
+            this.pages = 1;
             this.per_page = pages;
             axios.get(`${wpApi}`, {
                 params: {
@@ -109,21 +112,22 @@ export default {
     },
     methods: {
         fetch() {
-            var countPlus = this.posts.length;
-            this.count += 1;
+            var pagesPlus = this.posts.length;
+            this.pages++;
 
             axios.get(`${wpApi}`, {
                 params: {
                     tags: this.tag,
                     categories: this.category,
                     search: this.search,
-                    page: this.count,
+                    page: this.pages,
                     per_page: pages
                 }
             }).then(response => {
                 Array.prototype.push.apply(this.posts,response.data);
                 this.per_page += pages;
                 this.posts.splice();
+                this.$router.replace({ path: this.$route.path, query: { pages: this.pages } });
                 if(this.posts.length == this.per_page) {
                     this.show = true;
                 }
@@ -134,7 +138,7 @@ export default {
                 this.show = false;
                 this.postSearch = true;
                 console.log(error)
-            })
+            });
         },
         searchClick(words) {
              this.search = words;
@@ -146,7 +150,7 @@ export default {
 
 <style scoped>
     .archive__title {
-        background: var(--bg-sub-color);
+        background: var(--bg-accent-color);
         font-weight: 500;
         padding-top: 36px;
         padding-bottom: 36px;

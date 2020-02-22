@@ -34,7 +34,8 @@
     --fontC-sub-color: #565656;
     --link-color: #3498db;
     --bg-main-color: #fff;
-    --bg-sub-color: rgba(234,234,234,0.7);
+    --bg-sub-color: rgb(247, 247, 247);
+    --bg-accent-color: rgb(165, 183, 231);
     --bg-input-color: #fff;
 }
 
@@ -43,7 +44,8 @@
         --fontC-main-color: #fff;
         --fontC-sub-color: #ffffff99;
         --bg-main-color: #1e1e1e;
-        --bg-sub-color: rgba(44,44,40,0.7);
+        --bg-sub-color: rgb(44, 44, 40);
+        --bg-accent-color: rgb(52, 69, 113);
         --bg-input-color: #111111;
     }
 }
