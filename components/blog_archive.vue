@@ -17,7 +17,7 @@
                         <figure><a :href="post.link"><img :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url" :width="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.width" :height="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.height" :alt="post.title.rendered"></a></figure>
                         <h2 class="archive__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
                         <div class="archive__post-infomation">
-                            <p><nuxt-link :to="'/blog/category/'+post._embedded['wp:term'][0][0].id">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
+                            <p><nuxt-link :to="'/blog?category='+post._embedded['wp:term'][0][0].id">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
                             <p class="archive__post-date">{{ post.date }}</p>
                         </div>
                     </article>
@@ -41,8 +41,8 @@ export default {
             posts: "",
             pages: this.$route.query.pages,
             per_page: pages,
-            category: this.parmSlug,
-            tag: this.parmTag ,
+            category: this.$route.query.category,
+            tag: this.$route.query.tag ,
             show: true,
             postSearch: false,
             slug: "",
@@ -109,6 +109,9 @@ export default {
                 console.log(error)
             });
         },
+        '$route' (to, from) {
+            // ルートの変更の検知...
+        }
     },
     methods: {
         fetch() {
@@ -127,7 +130,14 @@ export default {
                 Array.prototype.push.apply(this.posts,response.data);
                 this.per_page += pages;
                 this.posts.splice();
-                this.$router.replace({ path: this.$route.path, query: { pages: this.pages } });
+                this.$router.replace({ 
+                    path: this.$route.path,
+                    query: { 
+                        tags: this.tag,
+                        categories: this.category,
+                        pages: this.pages 
+                    } 
+                });
                 if(this.posts.length == this.per_page) {
                     this.show = true;
                 }
