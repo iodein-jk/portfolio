@@ -17,7 +17,7 @@
                         <figure><a :href="post.link"><img :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url" :width="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.width" :height="post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.height" :alt="post.title.rendered"></a></figure>
                         <h2 class="archive__post-title"><a :href="post.link">{{ post.title.rendered }}</a></h2>
                         <div class="archive__post-infomation">
-                            <p><nuxt-link @click.native="queryLink()" :to="{path:'/blog', query: {category:post._embedded['wp:term'][0][0].id }}">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
+                            <p><nuxt-link @click.native="queryLink()" :to="{path:'/blog', query: {categories:post._embedded['wp:term'][0][0].id }}">{{ post._embedded['wp:term'][0][0].name }}</nuxt-link></p>
                             <p class="archive__post-date">{{ post.date }}</p>
                         </div>
                     </article>
@@ -34,14 +34,16 @@ const pages = 9;
 const wpApi = "https://aoiblog.org/blog/entry/wp-json/wp/v2/posts?_embed"
 export default {
     props: ['pageTitle','parmSlug','parmTag'],
+    watchQuery: ['categories','tags','search'],
     data() {
         return {
+            default: "ブログ",
             search: this.$route.query.search,
             posts: "",
             pages: this.$route.query.pages,
             per_page: pages,
-            category: this.$route.query.category,
-            tag: this.$route.query.tag ,
+            categories: this.$route.query.categories,
+            tags: this.$route.query.tags ,
             show: true,
             postSearch: false,
             slug: "",
@@ -57,8 +59,8 @@ export default {
         axios.get(`${wpApi}`, {
             params: {
                 search: this.search,
-                tags: this.tag,
-                categories: this.category,
+                tags: this.tags,
+                categories: this.categories,
                 page: this.pages,
                 per_page: pages
             }
@@ -68,15 +70,15 @@ export default {
             console.log(error)
         });
         
-        if(this.category != "") {
-            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/${this.category}`, {
+        if(this.categories != "") {
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/categories/${this.categories}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
             });
         }
-        if(this.tag != "") {
-            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/${this.tag}`, {
+        if(this.tags != "") {
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/tags/${this.tags}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
@@ -84,65 +86,86 @@ export default {
         }
     },
     watch: {
-        search: function (value) {
-            if(this.search != "") {
-                this.tag = "";
-                this.category = "";
-            }
-            else {
-                this.tag = this.parmTag;
-                this.category = this.parmSlug;
-            }
-            this.pages = 1;
-            this.per_page = pages;
-            axios.get(`${wpApi}`, {
-                params: {
-                    tags: this.tag,
-                    categories: this.category,
-                    search: this.search,
-                    page: 1,
-                    per_page: this.per_page
-                }
-            }).then(response => {
-                this.posts = response.data;
+        '$route' (to, from) {
+            if(Object.keys(to.query).length == 0) {
+                this.pages = 1;
+                this.per_page = pages;
                 this.show = true;
-                this.pageTitle = this.search;
-                this.$router.replace({ 
-                    path: this.$route.path,
-                    query: { 
-                        search: this.search,
-                        pages: this.pages 
-                    } 
-                });
-                if(this.posts.length == 0) {
+                this.postSearch = false;
+                this.search = "",
+                this.tags = "";
+                this.categories = "";
+                this.pageTitle = this.default,
+                axios.get(`${wpApi}`, {
+                    params: {
+                        page: 1,
+                        per_page: this.per_page
+                    }
+                }).then(response => {this.posts = response.data;
+                }).catch(error => {
                     this.show = false;
                     this.postSearch = true;
-                }
-                else if(this.posts.length < pages) {
-                    this.show = false;
-                    this.postSearch = false;
-                }
-                else {
-                    this.show = true;
-                    this.postSearch = false;
-                }
-            }).catch(error => {
-                console.log(error)
-            });
+                    console.log(error)
+                });
+            }
         },
-        '$route' (to, from) {
-            // ルートの変更の検知...
+        search: function (value) {
+            if(this.search != "") {
+                this.tags = "";
+                this.categories = "";
+                this.pages = 1;
+                this.per_page = pages;
+                axios.get(`${wpApi}`, {
+                    params: {
+                        tags: this.tag,
+                        categories: this.categories,
+                        search: this.search,
+                        page: 1,
+                        per_page: this.per_page
+                    }
+                }).then(response => {
+                    this.posts = response.data;
+                    this.show = true;
+                    this.pageTitle = this.search;
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            search: this.search,
+                            pages: this.pages 
+                        } 
+                    });
+                    if(this.posts.length == 0) {
+                        this.show = false;
+                        this.postSearch = true;
+                    }
+                    else if(this.posts.length < pages) {
+                        this.show = false;
+                        this.postSearch = false;
+                    }
+                    else {
+                        this.show = true;
+                        this.postSearch = false;
+                    }
+                }).catch(error => {
+                    console.log(error)
+                });
+            }
         }
     },
     methods: {
         fetch() {
             var pagesPlus = this.posts.length;
+            var palmReplace = 0;
+            if(this.$route.query.search) { palmReplace = 1; }
+            if(this.$route.query.categories) { palmReplace = 2; }
+            if(this.$route.query.tags) { palmReplace = 3; }
+            console.log(palmReplace);
             this.pages++;
 
             axios.get(`${wpApi}`, {
                 params: {
-                    tags: this.tag,
-                    categories: this.category,
+                    tags: this.tags,
+                    categories: this.categories,
                     search: this.search,
                     page: this.pages,
                     per_page: pages
@@ -151,15 +174,47 @@ export default {
                 Array.prototype.push.apply(this.posts,response.data);
                 this.per_page += pages;
                 this.posts.splice();
-                this.$router.replace({ 
-                    path: this.$route.path,
-                    query: { 
-                        search: this.search,
-                        tags: this.tag,
-                        categories: this.category,
-                        pages: this.pages 
-                    } 
-                });
+                switch(palmReplace) {
+                    case 3:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            tags: this.tags,
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+
+                    case 2:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            categories: this.categories,
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+
+                    case 1:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            search: this.search,
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+
+                    case 0:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+                }
+
                 if(this.posts.length == this.per_page) {
                     this.show = true;
                 }
@@ -176,7 +231,7 @@ export default {
              this.search = words;
         },
         queryLink() {
-            this.$router.go({ path:'/blog', query: { category: this.$route.query.category } });
+            this.$router.go({ path:'/blog', query: { categories: this.$route.query.categories } });
         }
         
     }

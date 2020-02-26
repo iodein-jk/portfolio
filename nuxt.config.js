@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 module.exports = {
   /*
@@ -48,38 +47,8 @@ module.exports = {
       {
         id: 'UA-126623343-1', //あなたのGoogleアナリティクスのプロパティID
         debug: true //本番環境以外でもGAを有効にしたい場合はtrueに。
-      }
+      },
     ]
   ],
-  generate: {
-    fallback: true,
-    routes () {
-      return Promise.all([
-        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category/?per_page=100'),
-        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/works_tag/?per_page=100'),
-        axios.get('https://aoiblog.org/blog/entry/wp-json/wp/v2/works?_embed&per_page=100')
-      ])
-      .then((res) => {
-        const worksCategorys = res[0]
-        const worksTags = res[1]
-        const worksDetails = res[2]
-        return worksCategorys.data.map((worksCategory) => {
-          return {
-            route: '/works/category/' + worksCategory.id,
-            payload: worksCategory
-          }
-        }).concat(worksTags.data.map((worksTag) => {
-          return {
-            route: '/works/tag/' + worksTag.id,
-            payload: worksTag
-          }
-        })).concat(worksDetails.data.map((worksDetail) => {
-          return {
-            route: '/works/entry/' + worksDetail.id,
-            payload: worksDetail
-          }
-        }))
-      })
-    }
-  }
+  generate: {}
 }

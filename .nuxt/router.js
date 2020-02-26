@@ -6,9 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _73615594 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
 const _5c2a3ccd = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _18395cb4 = () => interopDefault(import('../pages/works/index.vue' /* webpackChunkName: "pages/works/index" */))
-const _602edcd6 = () => interopDefault(import('../pages/works/category/_slug.vue' /* webpackChunkName: "pages/works/category/_slug" */))
-const _21208bfe = () => interopDefault(import('../pages/works/entry/_slug.vue' /* webpackChunkName: "pages/works/entry/_slug" */))
-const _4ff8fe29 = () => interopDefault(import('../pages/works/tag/_slug.vue' /* webpackChunkName: "pages/works/tag/_slug" */))
+const _1db3496e = () => interopDefault(import('../pages/works/entry/index.vue' /* webpackChunkName: "pages/works/entry/index" */))
 const _4d1d86b3 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -40,17 +38,9 @@ export const routerOptions = {
     component: _18395cb4,
     name: "works"
   }, {
-    path: "/works/category/:slug?",
-    component: _602edcd6,
-    name: "works-category-slug"
-  }, {
-    path: "/works/entry/:slug?",
-    component: _21208bfe,
-    name: "works-entry-slug"
-  }, {
-    path: "/works/tag/:slug?",
-    component: _4ff8fe29,
-    name: "works-tag-slug"
+    path: "/works/entry",
+    component: _1db3496e,
+    name: "works-entry"
   }, {
     path: "/",
     component: _4d1d86b3,

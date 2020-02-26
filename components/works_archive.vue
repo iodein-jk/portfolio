@@ -6,16 +6,16 @@
                 <input v-model="search" placeholder="作品を検索する">
                 <div class="works__search-list">
                     <button @click="searchClick('五等分の花嫁');">五等分の花嫁</button>
-                    <button @click="searchClick('冴え');">冴え</button>
+                    <button @click="searchClick('冴えない彼女の育てかた');">冴えない彼女の育てかた</button>
                     <button @click="searchClick('Webサイト');">Webサイト</button>
                 </div>
             </div>
             <ul class="works__post-list">
                 <li v-for="post in posts" :key="post.id" class="pworks__post-card">
                     <article>
-                        <a :href="'/works/entry/'+post.id" :style="'background-image:url('+post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url+')'">
+                        <nuxt-link :to="'/works/entry/?slug='+post.id" :style="'background-image:url('+post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url+')'">
                             <h2 class="works__post-title">{{ post.title.rendered }}</h2>
-                        </a>
+                        </nuxt-link>
                     </article>
                 </li>
             </ul>
@@ -26,19 +26,20 @@
 </template>
 <script>
 import axios from 'axios'
-const pages = 4;
+const pages = 8;
 const wpApi = "https://aoiblog.org/blog/entry/wp-json/wp/v2/works?_embed"
 export default {
     props: ['pageTitle','parmSlug','parmTag'],
+    watchQuery: ['works_category','works_tag','search'],
     data() {
         return {
-            title: ' | Aoiblog',
+            default: "制作実績",
             search: '',
             posts: "",
             pages: this.$route.query.pages,
             per_page: pages,
-            category: this.parmSlug,
-            tag: this.parmTag ,
+            works_category: this.$route.query.works_category,
+            works_tag: this.$route.query.works_tag ,
             show: true,
             postSearch: false,
             slug: "",
@@ -46,15 +47,15 @@ export default {
     },
     head () {
         return {
-            title: this.pageTitle+this.title
+            title: this.pageTitle
         }
     },
     created() {
         this.pages = this.pages == undefined ? 1 : this.pages ;
         axios.get(`${wpApi}`, {
             params: {
-                works_tag: this.tag,
-                works_category: this.category,
+                works_tag: this.works_tag,
+                works_category: this.works_category,
                 page: this.pages,
                 per_page: pages
             }
@@ -63,46 +64,88 @@ export default {
             this.show = false;
             console.log(error)
         });
-    },
-    watch: {
-        search: function (value) {
-            if(this.search != "") {
-                this.tag = "";
-                this.category = "";
-            }
-            else {
-                this.tag = this.parmTag;
-                this.category = this.parmSlug;
-            }
-            this.pages = 1;
-            this.per_page = pages;
-            axios.get(`${wpApi}`, {
-                params: {
-                    works_tag: this.tag,
-                    works_category: this.category,
-                    search: this.search,
-                    page: 1,
-                    per_page: this.per_page
-                }
-            }).then(response => {
-                this.posts = response.data;
-                this.show = true;
-                if(this.posts.length == 0) {
-                    this.show = false;
-                    this.postSearch = true;
-                }
-                else if(this.posts.length < pages) {
-                    this.show = false;
-                    this.postSearch = false;
-                }
-                else {
-                    this.show = true;
-                    this.postSearch = false;
-                }
+
+        if(this.works_category != "") {
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category/${this.works_category}`, {
+            }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
             });
+        }
+        if(this.works_tag != "") {
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_tag/${this.works_tag}`, {
+            }).then(response => {this.pageTitle = response.data.name;
+            }).catch(error => {
+                console.log(error)
+            });
+        }
+    },
+    watch: {
+        '$route' (to, from) {
+            if(Object.keys(to.query).length == 0) {
+                this.pages = 1;
+                this.per_page = pages;
+                this.show = true;
+                this.postSearch = false;
+                this.search = "",
+                this.works_tag = "";
+                this.works_category = "";
+                this.pageTitle = this.default,
+                axios.get(`${wpApi}`, {
+                    params: {
+                        page: 1,
+                        per_page: this.per_page
+                    }
+                }).then(response => {this.posts = response.data;
+                }).catch(error => {
+                    this.show = false;
+                    this.postSearch = true;
+                    console.log(error)
+                });
+            }
         },
+        search: function (value) {
+            if(this.search != "") {
+                this.works_tag = "";
+                this.works_category = "";
+                this.pages = 1;
+                this.per_page = pages;
+                axios.get(`${wpApi}`, {
+                    params: {
+                        works_tag: this.works_tag,
+                        works_category: this.works_category,
+                        search: this.search,
+                        page: 1,
+                        per_page: this.per_page
+                    }
+                }).then(response => {
+                    this.posts = response.data;
+                    this.show = true;
+                    this.pageTitle = this.search;
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            search: this.search,
+                            pages: this.pages 
+                        } 
+                    });
+                    if(this.posts.length == 0) {
+                        this.show = false;
+                        this.postSearch = true;
+                    }
+                    else if(this.posts.length < pages) {
+                        this.show = false;
+                        this.postSearch = false;
+                    }
+                    else {
+                        this.show = true;
+                        this.postSearch = false;
+                    }
+                }).catch(error => {
+                    console.log(error)
+                });
+            }
+        }
     },
     methods: {
         fetch() {
@@ -111,17 +154,61 @@ export default {
 
             axios.get(`${wpApi}`, {
                 params: {
-                    works_tag: this.tag,
-                    works_category: this.category,
+                    works_tag: this.works_tag,
+                    works_category: this.works_category,
                     search: this.search,
                     page: this.pages,
                     per_page: pages
                 }
             }).then(response => {
                 Array.prototype.push.apply(this.posts,response.data);
+                var palmReplace = 0;
+                if(this.$route.query.search) { palmReplace = 1; }
+                if(this.$route.query.works_category) { palmReplace = 2; }
+                if(this.$route.query.works_tag) { palmReplace = 3; }
                 this.per_page += pages;
                 this.posts.splice();
-                this.$router.replace({ path: this.$route.path, query: { pages: this.pages } });
+                switch(palmReplace) {
+                    case 3:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            works_tag: this.works_tag,
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+
+                    case 2:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            works_category: this.works_category,
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+
+                    case 1:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            search: this.search,
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+
+                    case 0:
+                    this.$router.replace({ 
+                        path: this.$route.path,
+                        query: { 
+                            pages: this.pages 
+                        } 
+                    });
+                    break;
+                }
+
                 if(this.posts.length == this.per_page) {
                     this.show = true;
                 }
@@ -136,6 +223,9 @@ export default {
         },
         searchClick(words) {
              this.search = words;
+        },
+        queryLink() {
+            this.$router.go({ path:'/blog', query: { works_category: this.$route.query.works_category } });
         }
         
     }
