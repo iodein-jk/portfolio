@@ -8,13 +8,13 @@ import {
 
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '../assets/css/ress.css'
+import '..\\assets\\css\\ress.css'
 
-import '../assets/css/style.css'
+import '..\\assets\\css\\style.css'
 
-import _2d21d098 from '../layouts/blog.vue'
-import _6f6c098b from '../layouts/default.vue'
-import _7841994c from '../layouts/works.vue'
+import _2d21d098 from '..\\layouts\\blog.vue'
+import _6f6c098b from '..\\layouts\\default.vue'
+import _7841994c from '..\\layouts\\works.vue'
 
 const layouts = { "_blog": _2d21d098,"_default": _6f6c098b,"_works": _7841994c }
 

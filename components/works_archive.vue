@@ -65,15 +65,17 @@ export default {
             console.log(error)
         });
 
-        if(this.works_category != "") {
-            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category/${this.works_category}`, {
+        if(this.works_category) {
+            let querySlugCategory = this.works_category ? this.works_category : "0";
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category/${querySlugCategory}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
             });
         }
-        if(this.works_tag != "") {
-            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_tag/${this.works_tag}`, {
+        if(this.works_tag) {
+            let querySlugTag = this.works_tag ? this.works_tag : "0";
+            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_tag/${querySlugTag}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
