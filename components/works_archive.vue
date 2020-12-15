@@ -27,7 +27,7 @@
 <script>
 import axios from 'axios'
 const pages = 8;
-const wpApi = "https://aoiblog.org/blog/entry/wp-json/wp/v2/works?_embed"
+const wpApi = "https://logphoto.xsrv.jp/blog/entry/wp-json/wp/v2/works?_embed"
 export default {
     props: ['pageTitle','parmSlug','parmTag'],
     watchQuery: ['works_category','works_tag','search'],
@@ -67,7 +67,7 @@ export default {
 
         if(this.works_category) {
             let querySlugCategory = this.works_category ? this.works_category : "0";
-            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_category/${querySlugCategory}`, {
+            axios.get(`https://logphoto.xsrv.jp/blog/entry/wp-json/wp/v2/works_category/${querySlugCategory}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
@@ -75,7 +75,7 @@ export default {
         }
         if(this.works_tag) {
             let querySlugTag = this.works_tag ? this.works_tag : "0";
-            axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works_tag/${querySlugTag}`, {
+            axios.get(`https://logphoto.xsrv.jp/blog/entry/wp-json/wp/v2/works_tag/${querySlugTag}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
@@ -124,12 +124,12 @@ export default {
                     this.posts = response.data;
                     this.show = true;
                     this.pageTitle = this.search;
-                    this.$router.replace({ 
+                    this.$router.replace({
                         path: this.$route.path,
-                        query: { 
+                        query: {
                             search: this.search,
-                            pages: this.pages 
-                        } 
+                            pages: this.pages
+                        }
                     });
                     if(this.posts.length == 0) {
                         this.show = false;
@@ -172,41 +172,41 @@ export default {
                 this.posts.splice();
                 switch(palmReplace) {
                     case 3:
-                    this.$router.replace({ 
+                    this.$router.replace({
                         path: this.$route.path,
-                        query: { 
+                        query: {
                             works_tag: this.works_tag,
-                            pages: this.pages 
-                        } 
+                            pages: this.pages
+                        }
                     });
                     break;
 
                     case 2:
-                    this.$router.replace({ 
+                    this.$router.replace({
                         path: this.$route.path,
-                        query: { 
+                        query: {
                             works_category: this.works_category,
-                            pages: this.pages 
-                        } 
+                            pages: this.pages
+                        }
                     });
                     break;
 
                     case 1:
-                    this.$router.replace({ 
+                    this.$router.replace({
                         path: this.$route.path,
-                        query: { 
+                        query: {
                             search: this.search,
-                            pages: this.pages 
-                        } 
+                            pages: this.pages
+                        }
                     });
                     break;
 
                     case 0:
-                    this.$router.replace({ 
+                    this.$router.replace({
                         path: this.$route.path,
-                        query: { 
-                            pages: this.pages 
-                        } 
+                        query: {
+                            pages: this.pages
+                        }
                     });
                     break;
                 }
@@ -229,7 +229,7 @@ export default {
         queryLink() {
             this.$router.go({ path:'/blog', query: { works_category: this.$route.query.works_category } });
         }
-        
+
     }
 }
 </script>
