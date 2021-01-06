@@ -42,7 +42,7 @@ export default {
     },
     asyncData (context) {
         let querySlug = context.query.slug ? context.query.slug : "1108";
-        return axios.get(`https://aoiblog.org/blog/entry/wp-json/wp/v2/works/${querySlug}?_embed`, {
+        return axios.get(`https://noisy-saito-4002.upper.jp/blog/entry/wp-json/wp/v2/works/${querySlug}?_embed`, {
             params: {
             }
         }).then(response => {return { posts: response.data }

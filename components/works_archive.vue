@@ -27,7 +27,7 @@
 <script>
 import axios from 'axios'
 const pages = 8;
-const wpApi = "https://logphoto.xsrv.jp/blog/entry/wp-json/wp/v2/works?_embed"
+const wpApi = "https://noisy-saito-4002.upper.jp/blog/entry/wp-json/wp/v2/works?_embed"
 export default {
     props: ['pageTitle','parmSlug','parmTag'],
     watchQuery: ['works_category','works_tag','search'],
@@ -67,7 +67,7 @@ export default {
 
         if(this.works_category) {
             let querySlugCategory = this.works_category ? this.works_category : "0";
-            axios.get(`https://logphoto.xsrv.jp/blog/entry/wp-json/wp/v2/works_category/${querySlugCategory}`, {
+            axios.get(`https://noisy-saito-4002.upper.jp/blog/entry/wp-json/wp/v2/works_category/${querySlugCategory}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)
@@ -75,7 +75,7 @@ export default {
         }
         if(this.works_tag) {
             let querySlugTag = this.works_tag ? this.works_tag : "0";
-            axios.get(`https://logphoto.xsrv.jp/blog/entry/wp-json/wp/v2/works_tag/${querySlugTag}`, {
+            axios.get(`https://noisy-saito-4002.upper.jp/blog/entry/wp-json/wp/v2/works_tag/${querySlugTag}`, {
             }).then(response => {this.pageTitle = response.data.name;
             }).catch(error => {
                 console.log(error)

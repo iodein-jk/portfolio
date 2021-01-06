@@ -48,7 +48,7 @@
         background-color: var(--bg-sub-color);
         margin-top: 44px;
     }
-    
+
     .ex-nav ul {
         display: flex;
         display: -webkit-flex;
@@ -67,7 +67,7 @@
         padding-bottom: 4px;
         text-decoration: none;
     }
-    
+
     .ex-nav a:hover,
     .ex-nav .nuxt-link-active {
         background-color: #00c58e;
