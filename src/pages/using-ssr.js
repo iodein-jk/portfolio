@@ -8,7 +8,7 @@ const UsingSSR = ({ serverData }) => {
   return (
     <Layout>
       <h1>
-        This page is <b>rendered server-side</b>
+        Test This page is <b>rendered server-side</b>
       </h1>
       <p>
         This page is rendered server side every time the page is requested.
