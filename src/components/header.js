@@ -2,9 +2,9 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <header class="flex text-base fixed top-0 left-0 w-full z-10">
+  <header class="flex text-base fixed top-0 left-0 w-full z-20">
     <div class="basis-3/12 p-5">
-      <Link className="text-neutral-950" to="/">{siteTitle}</Link>
+      <Link className="font-serif text-neutral-950" to="/">{siteTitle}</Link>
     </div>
 
     <nav class="basis-9/12">

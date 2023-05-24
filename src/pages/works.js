@@ -9,8 +9,8 @@ const SecondPage = () => (
       <div class="mt-20">
         <div class="bg-white py-6 sm:py-8 lg:py-12">
           <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <p class="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-3xl">Works</p>
-            <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-6xl">制作物</h2>
+            <p class="font-serif mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-3xl">Works</p>
+            <h2 class="font-serif mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-6xl">制作物</h2>
           </div>
         </div>
 

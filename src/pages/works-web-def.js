@@ -10,7 +10,7 @@ const SecondPage = () => (
       <div class="bg-slate-100 h-screen pt-20 px-12 md:px-24 relative">
         <section class="relative z-10">
           <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <h1 class="text-center mb-4 text-3xl font-bold text-gray-800 md:mb-6 lg:text-6xl">Revolutionary way to build the web</h1>
+            <h1 class="font-serif text-center mb-4 text-3xl text-gray-800 md:mb-6 lg:text-6xl">Revolutionary way to build the web</h1>
           </div>
         </section>
 

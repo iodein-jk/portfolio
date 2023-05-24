@@ -9,8 +9,8 @@ const SecondPage = () => (
       <div class="mt-20">
       <div class="bg-white py-6 sm:py-8 lg:py-12">
           <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <p class="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-3xl">About</p>
-            <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-6xl">自己紹介</h2>
+            <p class="font-serif mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-3xl">About</p>
+            <h2 class="font-serif mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-6xl">自己紹介</h2>
           </div>
         </div>
 
@@ -285,7 +285,9 @@ const SecondPage = () => (
                 </div>
               </div>
             </div>
-            <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+            <div class="text-center py-6">
+              <Link to="/works" className="inline-block rounded-lg bg-indigo-500 px-10 py-4 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700">Works</Link>
+            </div>
           </div>
         </div>
       </div>
