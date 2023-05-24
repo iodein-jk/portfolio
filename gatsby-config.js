@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `PortFolio`,
+    title: `Kenji PortFolio`,
     description: `webデザイナー、フロントエンドエンジニアのポートフィリオサイト`,
     author: `@iodein-jk`,
     siteUrl: `https://portfolio-iodein.netlify.app/`,
