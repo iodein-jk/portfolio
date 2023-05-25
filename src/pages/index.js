@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 //import Layout from "../components/layout"
 import Seo from "../components/seo"
+import * as styles from "../styles/module/slider.module.scss"
 
 const samplePageLinks = [
   {
@@ -19,24 +20,39 @@ const samplePageLinks = [
 
 const IndexPage = () => (
   <div>
-    <div class="flex items-center h-screen p-12 md:p-24 relative">
+    <div class="border-solid border-[16px] border-white flex items-center h-screen relative">
       <section class="relative z-10">
-        <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:py-24">
-          <p class="mb-4 font-serif font-semibold text-indigo-500 md:mb-6 text-xl xl:text-6xl">Welcome To</p>
+        <div class="bg-[#ffffff] flex flex-col justify-center p-6 sm:text-center lg:text-left">
+          <p class="mb-4 font-serif text-indigo-500 text-center md:mb-2 text-md">Welcome To</p>
 
-          <h1 class="font-serif text-black-800 mb-8 text-4xl font-bold sm:text-5xl md:mb-12 md:text-9xl reveal-text">Kenji PortFolio</h1>
-
-          <p class="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
+          <h1 class="font-serif text-black-800 text-center mb-4 text-2xl reveal-text">Kenji PortFolio</h1>
 
           <div class="flex gap-2.5 sm:justify-center lg:justify-start">
-            <Link to="/about" className="inline-block rounded-lg bg-indigo-500 px-10 py-4 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700">About</Link>
-            <Link to="/works" className="inline-block rounded-lg bg-indigo-500 px-10 py-4 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700">Works</Link>
+            <Link to="/about" className="inline-block rounded-lg bg-indigo-300 px-6 py-2 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700">About</Link>
+            <Link to="/works" className="inline-block rounded-lg bg-indigo-300 px-6 py-2 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700">Works</Link>
           </div>
         </div>
       </section>
 
-      <div class="absolute top-0 left-0 w-full h-full">
-        
+      <div class="absolute rounded-md overflow-hidden top-0 left-0 w-full h-full">
+        <div class="flex flex-col w-full h-full lg:flex-row">
+          <div class="w-full h-1/2 lg:h-full lg:w-1/2 bg-emerald-300">
+            <div className={styles.slide}>
+              <div className={`${styles.slideItem} ${styles.slideItem_1}`}></div>
+              <div className={`${styles.slideItem} ${styles.slideItem_2}`}></div>
+              <div className={`${styles.slideItem} ${styles.slideItem_3}`}></div>
+              <div className={`${styles.slideItem} ${styles.slideItem_4}`}></div>
+            </div> 
+          </div>
+          <div class="w-full h-1/2 lg:h-full lg:w-1/2 bg-emerald-400">
+            <div className={styles.slide}>
+              <div className={`${styles.slideItem} ${styles.slideItem_1}`}></div>
+              <div className={`${styles.slideItem} ${styles.slideItem_2}`}></div>
+              <div className={`${styles.slideItem} ${styles.slideItem_3}`}></div>
+              <div className={`${styles.slideItem} ${styles.slideItem_4}`}></div>
+            </div> 
+          </div>
+        </div>
       </div>
     </div>
   </div>
