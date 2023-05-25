@@ -7,132 +7,106 @@ import Seo from "../components/seo"
 const SecondPage = () => (
   <Layout>
       <div class="pt-20">
-      <div class="bg-white py-6 sm:py-8 lg:py-12">
+        <div class="bg-white py-6 sm:py-8 lg:py-12">
           <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
             <p class="font-serif mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-3xl">About</p>
             <h2 class="font-serif mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-6xl">自己紹介</h2>
           </div>
         </div>
 
-        <div class="bg-white py-6 sm:py-12 lg:py-12">
-          <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-            <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
-              <div>
-                <div class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
-                  <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=750" loading="lazy" alt="Photo by Martin Sanchez" class="h-full w-full object-cover object-center" />
+        <section class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto flex flex-col">
+            <div class="flex flex-col sm:flex-row mt-10">
+              <div class="sm:w-1/4 text-center sm:pr-8 sm:py-8">
+                <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="flex flex-col items-center text-center justify-center">
+                  <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Phoebe Caulfield</h2>
+                  <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
+                  <p class="text-base">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</p>
                 </div>
               </div>
-
-              <div class="md:pt-8">
-                <p class="text-center font-bold text-indigo-500 md:text-left">Who we are</p>
-
-                <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">土井 健司</h1>
-
-                <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">
-                  This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however looks very similar to real text.<br /><br />
-
-                  This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is <a href="#" class="text-indigo-500 underline transition duration-100 hover:text-indigo-600 active:text-indigo-700">random</a> or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however looks very similar to real text.
-                </p>
-
-                <h2 class="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">About us</h2>
-
-                <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however looks very similar to real text.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="bg-white py-6 sm:py-12 lg:py-24">
-          <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-            <div class="mb-10 md:mb-16">
-              <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">これまでの経歴</h2>
-
-              <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
-            </div>
-
-            <div class="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16">
-              <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-                <a href="#" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                  <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-                </a>
-
-                <div class="flex flex-col gap-2">
-                  <span class="text-sm text-gray-400">July 19, 2021</span>
-
-                  <h2 class="text-xl font-bold text-gray-800">
-                    <a href="#" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">New trends in Tech</a>
-                  </h2>
-
-                  <p class="text-gray-500">This is a section of some simple filler text, also known as placeholder text.</p>
-
-                  <div>
-                    <a href="#" class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Read more</a>
+              <div class="sm:w-3/4 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <div class="w-full text-left md:pr-10 md:py-6 pl-4">
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 1</h2>
+                      <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-                <a href="#" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                  <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-                </a>
-
-                <div class="flex flex-col gap-2">
-                  <span class="text-sm text-gray-400">April 07, 2021</span>
-
-                  <h2 class="text-xl font-bold text-gray-800">
-                    <a href="#" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">Working with legacy stacks</a>
-                  </h2>
-
-                  <p class="text-gray-500">This is a section of some simple filler text, also known as placeholder text.</p>
-
-                  <div>
-                    <a href="#" class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Read more</a>
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 2</h2>
+                      <p class="leading-relaxed">Vice migas literally kitsch +1 pok pok. Truffaut hot chicken slow-carb health goth, vape typewriter.</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-                <a href="#" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                  <img src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Magicle" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-                </a>
-
-                <div class="flex flex-col gap-2">
-                  <span class="text-sm text-gray-400">March 15, 2021</span>
-
-                  <h2 class="text-xl font-bold text-gray-800">
-                    <a href="#" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">10 best smartphones for devs</a>
-                  </h2>
-
-                  <p class="text-gray-500">This is a section of some simple filler text, also known as placeholder text.</p>
-
-                  <div>
-                    <a href="#" class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Read more</a>
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="3"></circle>
+                        <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 3</h2>
+                      <p class="leading-relaxed">Coloring book nar whal glossier master cleanse umami. Salvia +1 master cleanse blog taiyaki.</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-                <a href="#" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
-                  <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Martin Sanchez" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-                </a>
-
-                <div class="flex flex-col gap-2">
-                  <span class="text-sm text-gray-400">January 27, 2021</span>
-
-                  <h2 class="text-xl font-bold text-gray-800">
-                    <a href="#" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">8 High performance Notebooks</a>
-                  </h2>
-
-                  <p class="text-gray-500">This is a section of some simple filler text, also known as placeholder text.</p>
-
-                  <div>
-                    <a href="#" class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Read more</a>
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 4</h2>
+                      <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+                    </div>
+                  </div>
+                  <div class="flex relative">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                        <path d="M22 4L12 14.01l-3-3"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">FINISH</h2>
+                      <p class="leading-relaxed">Pitchfork ugh tattooed scenester echo park gastropub whatever cold-pressed retro.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <div class="bg-white py-6 sm:py-12 lg:py-24">
           <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -285,6 +259,7 @@ const SecondPage = () => (
                 </div>
               </div>
             </div>
+
             <div class="text-center py-6">
               <Link to="/works" className="inline-block rounded-lg bg-indigo-500 px-10 py-4 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700">Works</Link>
             </div>
