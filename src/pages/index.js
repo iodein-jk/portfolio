@@ -35,23 +35,13 @@ const IndexPage = () => (
       </section>
 
       <div class="absolute rounded-md overflow-hidden top-0 left-0 w-full h-full">
-        <div class="flex flex-col w-full h-full lg:flex-row">
-          <div class="w-full h-1/2 lg:h-full lg:w-1/2 bg-emerald-300">
-            <div className={styles.slide}>
-              <div className={`${styles.slideItem} ${styles.slideItem_1}`}></div>
-              <div className={`${styles.slideItem} ${styles.slideItem_2}`}></div>
-              <div className={`${styles.slideItem} ${styles.slideItem_3}`}></div>
-              <div className={`${styles.slideItem} ${styles.slideItem_4}`}></div>
-            </div> 
-          </div>
-          <div class="w-full h-1/2 lg:h-full lg:w-1/2 bg-emerald-400">
-            <div className={styles.slide}>
-              <div className={`${styles.slideItem} ${styles.slideItem_1}`}></div>
-              <div className={`${styles.slideItem} ${styles.slideItem_2}`}></div>
-              <div className={`${styles.slideItem} ${styles.slideItem_3}`}></div>
-              <div className={`${styles.slideItem} ${styles.slideItem_4}`}></div>
-            </div> 
-          </div>
+        <div class="w-full h-full bg-emerald-300">
+          <div className={styles.slide}>
+            <div className={`${styles.slideItem} ${styles.slideItem_1}`}></div>
+            <div className={`${styles.slideItem} ${styles.slideItem_2}`}></div>
+            <div className={`${styles.slideItem} ${styles.slideItem_3}`}></div>
+            <div className={`${styles.slideItem} ${styles.slideItem_4}`}></div>
+          </div> 
         </div>
       </div>
     </div>

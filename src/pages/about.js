@@ -14,9 +14,9 @@ const SecondPage = () => (
           </div>
         </div>
 
-        <section class="text-gray-600 body-font">
-          <div class="container px-5 py-24 mx-auto flex flex-col">
-            <div class="flex flex-col sm:flex-row mt-10">
+        <section class="text-gray-600 body-font py-6 sm:py-8 lg:py-12">
+          <div class="container px-5 mx-auto flex flex-col">
+            <div class="flex flex-col sm:flex-row">
               <div class="sm:w-1/4 text-center sm:pr-8 sm:py-8">
                 <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
