@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           <footer class="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div class="py-8 text-center text-sm text-gray-400">© {new Date().getFullYear()} &middot; Built with
             {` `}
-            <a href="https://www.gatsbyjs.com">Gatsby</a></div>
+            <a href="https://portfolio-iodein.netlify.app/">portfolio-iodein</a></div>
           </footer>
         </div>
       </div>

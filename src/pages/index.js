@@ -1,22 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 //import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../styles/module/slider.module.scss"
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
 
 const IndexPage = () => (
   <div>
@@ -35,12 +23,36 @@ const IndexPage = () => (
       </section>
 
       <div class="absolute rounded-md overflow-hidden top-0 left-0 w-full h-full">
-        <div class="w-full h-full bg-emerald-300">
+        <div class="w-full h-full">
           <div className={styles.slide}>
-            <div className={`${styles.slideItem} ${styles.slideItem_1}`}></div>
-            <div className={`${styles.slideItem} ${styles.slideItem_2}`}></div>
-            <div className={`${styles.slideItem} ${styles.slideItem_3}`}></div>
-            <div className={`${styles.slideItem} ${styles.slideItem_4}`}></div>
+            <div className={`${styles.slideItem} ${styles.slideItem_1}`}>
+              <div class="bg-blue-100 h-screen flex items-start md:items-center justify-end">
+                <div class="container">
+                  <StaticImage src="../images/works/mic/mock/000.png" placeholder="none" alt="MICWARE CO., LTD." class="" />
+                </div>
+              </div>
+            </div>
+            <div className={`${styles.slideItem} ${styles.slideItem_2}`}>
+              <div class="bg-lime-100 h-screen flex items-end md:items-end justify-start">
+                <div class="container">
+                  <StaticImage src="../images/works/ai/mock/000.png" placeholder="none" alt="Ai-MetaRoom" class="" />
+                </div>
+              </div>
+            </div>
+            <div className={`${styles.slideItem} ${styles.slideItem_3}`}>
+              <div class="bg-gray-100 h-screen flex items-start md:items-start justify-end">
+                <div class="container">
+                  <StaticImage src="../images/works/artiststore/mock/000.png" placeholder="none" alt="ARTISTSTORE.JP" class="" />
+                </div>
+              </div>
+            </div>
+            <div className={`${styles.slideItem} ${styles.slideItem_4}`}>
+              <div class="bg-rose-100 h-screen flex items-end md:items-start justify-start">
+                <div class="container">
+                  <StaticImage src="../images/works/2nd/mock/000.png" placeholder="none" alt="2nd Kitchen" class="" />
+                </div>
+              </div>
+            </div>
           </div> 
         </div>
       </div>
