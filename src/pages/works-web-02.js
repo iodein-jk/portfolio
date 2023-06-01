@@ -11,7 +11,7 @@ const SecondPage = () => (
         <section class="relative z-10">
           <div class="mx-auto max-w-screen-2xl md:px-8">
             <h1 class="font-serif text-center mb-4 text-3xl text-rose-500 md:mb-6 lg:text-6xl">2nd Kitchen</h1>
-            <div class="container mx-auto text-center">
+            <div class="flex justify-center">
               <StaticImage src="../images/works/2nd/mock/000.png" placeholder="none" alt="" class="" />
             </div>
           </div>
@@ -98,6 +98,14 @@ const SecondPage = () => (
 
               <p class="text-gray-500">ECサイト
                 <br />京都に店舗を構えるお弁当屋さんの通販サイト</p>
+              <a href="https://www.second-kitchen.net" target="_blank" class="flex items-center text-sky-400 hover:underline">
+                <span class="block">
+                  https://www.second-kitchen.net
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6" />
+                </svg>
+              </a>
             </div>
 
             <div class="rounded-lg bg-gray-100 p-5">

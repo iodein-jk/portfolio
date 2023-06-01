@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import Pdf from "../pdf/insight-guide-501-0-84822534-20230601144411528000000-eoYXXN.pdf";
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -24,11 +25,39 @@ const SecondPage = () => (
                 </div>
                 <div class="flex flex-col items-center justify-center">
                   <h2 class="font-medium title-font mt-4 text-gray-900 text-lg text-center">土井 健司</h2>
-                  <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-                  <div class="flex justify-center">
+                  <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-2"></div>
+                  <div class="flex justify-center flex-col items-center">
                     <p class="text-base text-left md:text-center">WEBデザイナー・フロントエンドエンジニアでご飯を食べています。
                     <br />ニート→制作会社正社員勤務→フリーランスで自宅勤務
                     <br />普段は大阪のワンルームでゲームを嗜みながら生きています。</p>
+                    <ul class="mt-6">
+                      <li class="my-3">
+                        <a href="https://github.com/iodein-jk" target="_blank" class="flex items-center text-sky-400 hover:underline">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                          </svg>
+                          <span class="block">
+                            Githubはこちら
+                          </span>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6" />
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="my-3">
+                        <a href={Pdf} target="_blank" class="flex items-center text-sky-400 hover:underline">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                          </svg>
+                          <span class="block">
+                            ストレングスファインダーで自己分析してみた
+                          </span>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6" />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -64,7 +93,7 @@ const SecondPage = () => (
                     </div>
                     <div class="flex-grow pl-4">
                       <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">2015年8月〜2021年8月</h2>
-                      <p class="leading-relaxed">なんでもいいので働かなければと焦燥感が生まれる。<br />改めて制作会社を受け、内定。<br />WEBデザイナーとして正社員になる</p>
+                      <p class="leading-relaxed">時間を開け、改めてWeb業界に入りたいと考え、制作会社を受けを内定をいただく。<br />WEBデザイナーとして正社員になる</p>
                     </div>
                   </div>
                   <div class="flex relative">
@@ -72,7 +101,7 @@ const SecondPage = () => (
                     </div>
                     <div class="flex-grow pl-4">
                       <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">2021年9月〜現在</h2>
-                      <p class="leading-relaxed">新しい働き方の模索の為、上記制作会社を退職。<br />フリーランスエンジニアとして活動を開始</p>
+                      <p class="leading-relaxed">主任という役職ももらえ、順風満帆。<br />しかしもっと新しい働き方を模索したいと考え、上記制作会社を退職。<br />フリーランスとして活動を開始</p>
                     </div>
                   </div>
                 </div>
@@ -142,7 +171,7 @@ const SecondPage = () => (
                 </div>
 
                 <div class="p-4 md:p-6">
-                  <h3 class="mb-2 text-lg font-semibold md:text-xl">システム管理画面のフロントエンド開発</h3>
+                  <h3 class="mb-2 text-lg font-semibold md:text-xl">システム管理画面のフロント構築</h3>
                   <p class="text-gray-500">モック制作
                     <br />javaScriptを用いた計測システム
                     <br />（グラフ等）作成</p>
@@ -181,120 +210,120 @@ const SecondPage = () => (
         </div>
 
         <div class="text-gray-600 body-font">
-          <div class="mx-auto max-w-screen-xl px-5">
+          <div class="mx-auto max-w-screen-2xl px-5">
             <div class="text-center">
               <h3 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Skill / Experience</h3>
             </div>
             <div class="flex flex-wrap sm:mx-auto sm:mb-2 -mx-2">
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">レスポンシブサイト制作</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">HTML5/CSS3</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">javascript</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">WordPress</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-300 text-green-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">ECCUBE2.13.5</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-300 text-green-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">jQuery</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-300 text-green-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">Node.js</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-300 text-green-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">Webデザイン</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-300 text-green-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">PHP</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-300 text-green-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">jQuery</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">ECCUBE4</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">ECCUBE3</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">Docker</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">vue.js</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">nuxt.js</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">react.js</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">gatsby.js</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">広告/販促物作成</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">動画制作</span>
@@ -305,93 +334,89 @@ const SecondPage = () => (
         </div>
 
         <div class="text-gray-600 body-font py-6 sm:py-12 lg:py-24">
-          <div class="mx-auto max-w-screen-xl px-5">
+          <div class="mx-auto max-w-screen-2xl px-5">
             <div class="text-center">
               <h3 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Tool / Experience</h3>
             </div>
             <div class="flex flex-wrap sm:mx-auto sm:mb-2 -mx-2">
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">Atom</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">Abode Photoshop</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">ChatWork</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-300 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">sublimetext</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-300 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-500 text-white flex-shrink-0 mr-4">3年以上</span>
                   <span class="title-font font-medium">vscode</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-300 text-blue-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">Abode illustrator</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-300 text-blue-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">Abode XD</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-300 text-blue-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">Abode DreamWeaver</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-300 text-blue-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">PHP</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-200 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-300 text-blue-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">GoogleAnalytics</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-300 text-blue-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">svn</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-200 rounded flex p-4 h-full items-center">
                   <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-300 text-blue-800 mr-4">1~2年</span>
                   <span class="title-font font-medium">Slack</span>
                 </div>
               </div>
-              <div class="p-1 sm:w-1/3 w-full">
+              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-blue-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-200 text-blue-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">Abode premierePro</span>
                 </div>
               </div>
-            </div>
-
-            <div class="text-center py-6">
-              <Link to="/works" className="inline-block rounded-lg bg-indigo-500 px-10 py-4 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700">Works</Link>
             </div>
           </div>
         </div>
