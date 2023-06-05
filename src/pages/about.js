@@ -283,12 +283,6 @@ const SecondPage = () => (
                 </div>
               </div>
               <div class="p-0.5 sm:w-1/4 w-full">
-                <div class="bg-green-200 rounded flex p-4 h-full items-center">
-                  <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-300 text-green-800 mr-4">1~2年</span>
-                  <span class="title-font font-medium">jQuery</span>
-                </div>
-              </div>
-              <div class="p-0.5 sm:w-1/4 w-full">
                 <div class="bg-green-100 rounded flex p-4 h-full items-center">
                 <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-200 text-green-500 mr-4">1年未満</span>
                   <span class="title-font font-medium">ECCUBE4</span>
