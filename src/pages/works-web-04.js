@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 const SecondPage = () => (
   <Layout>
     <>
-      <div class="md:h-screen pt-20 px-12 md:px-24 relative">
+      <div class="md:min-h-screen pt-20 px-12 md:px-24 relative">
         <section class="relative z-10">
           <div class="mx-auto max-w-screen-2xl md:px-8">
             <h1 class="font-serif text-center mb-4 text-3xl text-lime-500 md:mb-6 lg:text-6xl">Ai-MetaRoom</h1>

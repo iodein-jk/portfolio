@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Pdf from "../pdf/insight-guide-501-0-84822534-20230601144411528000000-eoYXXN.pdf";
 
