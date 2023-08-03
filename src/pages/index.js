@@ -23,9 +23,15 @@ const IndexPage = () => (
       </section>
 
       <div className={visual.images + " absolute rounded-md overflow-hidden top-0 left-0 w-full h-full"}>
-        <div className={visual.images_pc + " w-full h-full lg:block hidden"}></div>
-        <div className={visual.images_tb + " w-full h-full md:block hidden"}></div>
-        <div className={visual.images_sp + " w-full h-full block"}></div>
+        <div className={visual.images_pc + " w-full h-full lg:block hidden"}>
+          <StaticImage src="../images/front/pc_visual.jpg" placeholder="none" alt="ポートフォリオサイト" />
+        </div>
+        <div className={visual.images_tb + " w-full h-full md:block hidden"}>
+          <StaticImage src="../images/front/tb_visual.jpg" placeholder="none" alt="ポートフォリオサイト" />
+        </div>
+        <div className={visual.images_sp + " w-full h-full block"}>
+          <StaticImage src="../images/front/sp_visual.jpg" placeholder="none" alt="ポートフォリオサイト" />
+        </div>
       </div>
     </div>
   </div>
