@@ -27,9 +27,8 @@ const SecondPage = () => (
                   <h2 class="font-medium title-font mt-4 text-gray-900 text-lg text-center">土井 健司</h2>
                   <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-2"></div>
                   <div class="flex justify-center flex-col items-center">
-                    <p class="text-base text-left md:text-center">WEBデザイナー・フロントエンドエンジニアでご飯を食べています。
-                    <br />ニート→制作会社正社員勤務→フリーランスで自宅勤務
-                    <br />普段は大阪のワンルームでゲームを嗜みながら生きています。</p>
+                    <p class="text-base text-left text-sm">WEBデザイナー・フロントエンドエンジニアでご飯を食べています。
+                    <br />ニート → 制作会社正社員勤務 → フリーランスで自宅勤務 → 東京で再び正社員になりました。</p>
                     <ul class="mt-6">
                       <li class="my-3">
                         <a href="https://github.com/iodein-jk" target="_blank" class="flex items-center text-sky-400 hover:underline">
@@ -74,7 +73,7 @@ const SecondPage = () => (
                   </div>
                 </div>
               </div>
-              <div class="sm:w-2/4 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+              <div class="sm:w-3/4 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                 <div class="w-full text-left md:pr-10 md:py-6 pl-4">
                   <div class="flex relative pb-12">
                     <div class="h-full w-5 absolute inset-0 flex items-center justify-center">
@@ -109,12 +108,23 @@ const SecondPage = () => (
                       <p class="leading-relaxed">時間を開け、改めてWeb業界に入りたいと考え、制作会社を受けを内定をいただく。<br />WEBデザイナーとして正社員になる</p>
                     </div>
                   </div>
-                  <div class="flex relative">
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-5 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    </div>
                     <div class="flex-shrink-0 w-5 h-5 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
                     </div>
                     <div class="flex-grow pl-4">
                       <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">2021年9月〜現在</h2>
                       <p class="leading-relaxed">主任という役職ももらえ、順風満帆。<br />しかしもっと新しい働き方を模索したいと考え、上記制作会社を退職。<br />フリーランスとして活動を開始</p>
+                    </div>
+                  </div>
+                  <div class="flex relative">
+                    <div class="flex-shrink-0 w-5 h-5 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                    </div>
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">2023年10月〜現在</h2>
+                      <p class="leading-relaxed">株式会社ラセングルに入社。Fate/GrandOrderの運営/マーケティング部門に所属</p>
                     </div>
                   </div>
                 </div>
